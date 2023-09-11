@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grades</title>
+  </head>
+
+  <body>
+    <table border="0" width="100%">
+      <tr valign="baseline">
+        <td>
+          <ul>
+            <li><a href="profile/profile-nav.html">Account</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="home-nav.html">Courses</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Commons</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </td>
+
+        <td>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Modules</a></li>
+            <li><a href="#">Piazza</a></li>
+            <li><a href="#">Zoom Meetings</a></li>
+            <li><a href="assignments/index.html">Assignments</a></li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="grades.html">Grades</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Panopto Video</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Rubrics</a></li>
+            <li><a href="#">Outcomes</a></li>
+            <li><a href="#">Collaborations</a></li>
+            <li><a href="#">Syllabus</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </td>
+
+        <td>
+          <select id="select_gradeBook">
+            <option selected value="gradebook">Gradebook</option>
+            <option value="somthing_else">Something Else</option>
+            <option value="some_string">Some String</option>
+          </select>
+          <button type="button">Import</button>
+          <select id="select_export">
+            <option selected value="export">Export</option>
+            <option value="import">Import</option>
+            <option value="do_something">Do Something</option>
+          </select>
+          <button type="button">Configure</button>
+
+          <h2>Student Names</h2>
+          <input id="student_search_input" placeholder="Search Students" />
+          <br />
+
+          <h2>Assignment Names</h2>
+          <input
+            id="assignments_search_input"
+            placeholder="Search Assignments"
+          />
+
+          <br />
+          <br />
+
+          <button type="button">Apply Filters</button>
+
+          <br />
+          <br />
+
+          <table border="1" width="100%">
+            <thead>
+              <th>
+                Student Name <br />
+                Out of 100
+              </th>
+              <th>
+                A1 SETUP<br />
+                Out of 100
+              </th>
+              <th>
+                A2 HTML<br />
+                Out of 100
+              </th>
+              <th>
+                A3 CSS<br />
+                Out of 100
+              </th>
+              <th>
+                A4 BOOTSTRAP<br />
+                Out of 100
+              </th>
+              <th>
+                A5 JS<br />
+                Out of 100
+              </th>
+              <th>
+                A6 React<br />
+                Out of 100
+              </th>
+              <th>
+                A7 Node<br />
+                Out of 100
+              </th>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Captain America</td>
+                <td><input placeholder="100" size="5" value="100" /></td>
+                <td>41</td>
+                <td>93</td>
+                <td>34</td>
+                <td>24</td>
+                <td>53</td>
+                <td>43</td>
+              </tr>
+
+              <tr>
+                <td>Ironman</td>
+                <td>10</td>
+                <td><input placeholder="100" size="5" value="100" /></td>
+                <td>23</td>
+                <td>34</td>
+                <td>34</td>
+                <td>88</td>
+                <td>14</td>
+              </tr>
+
+              <tr>
+                <td>Black Widow</td>
+                <td>2</td>
+                <td>53</td>
+                <td><input placeholder="100" size="5" value="100" /></td>
+                <td>53</td>
+                <td>11</td>
+                <td>42</td>
+                <td>72</td>
+              </tr>
+
+              <tr>
+                <td>Hulk</td>
+                <td>34</td>
+                <td>24</td>
+                <td>63</td>
+                <td><input placeholder="100" size="5" value="100" /></td>
+                <td>42</td>
+                <td>88</td>
+                <td>92</td>
+              </tr>
+
+              <tr>
+                <td>Black Panther</td>
+                <td>61</td>
+                <td>53</td>
+                <td>5</td>
+                <td>34</td>
+                <td><input placeholder="100" size="5" value="100" /></td>
+                <td>23</td>
+                <td>53</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
