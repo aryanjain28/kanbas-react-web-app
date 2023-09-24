@@ -3,135 +3,289 @@
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
-    <table border="0" width="100%">
-      <tbody>
-        <tr valign="baseline">
-          <td>
-            <ul>
-              <li><a href="../nav/profileNav.html">Account</a></li>
-              <li><a href="#">Dashboard</a></li>
-              <li><a href="../nav/courseNav.html">Courses</a></li>
-              <li><a href="#">Calendar</a></li>
-              <li><a href="#">Inbox</a></li>
-              <li><a href="#">History</a></li>
-              <li><a href="#">Studio</a></li>
-              <li><a href="#">Commons</a></li>
-              <li><a href="#">Help</a></li>
-            </ul>
-          </td>
+    <div class="d-flex float-left">
+      <div class="d-flex flex-column h-100 float-left">
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black"
+        >
+          <i class="fa-solid fa-n fa-5x" style="color: #de0d0d"></i>
+        </a>
 
-          <td>
-            <ul>
-              <li><a href="#">Notifications</a></li>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Files</a></li>
-              <li><a href="#">Settings</a></li>
-              <li><a href="#">ePortfolios</a></li>
-              <li><a href="#">Shared Content</a></li>
-              <li><a href="#">The Hub</a></li>
-              <li><a href="#">Qwickly Course Tools</a></li>
-              <li><a href="#">Global Announcements</a></li>
-            </ul>
-          </td>
+        <a
+          href="../nav/profileNav.html"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: white; color: #de0d0d"
+        >
+          <i class="fa-solid fa-user fa-2x" style="color: black"></i>
+          Account
+        </a>
 
-          <td>
-            <form>
-              <h2>Aryan Jain</h2>
-              <label for="user_name">Name:*</label>
-              <input id="user_name" placeholder="Aryan Jain" />
-              <label for="user_pronounce">Pronouns</label>
-              <select id="user_pronounce">
-                <option value="None">None</option>
-                <option value="his">He/Him/His</option>
-                <option value="her">She/Her</option>
-                <option value="other">Other</option>
-              </select>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-gauge fa-2x" style="color: #de0d0d"></i>
+          Dashboard
+        </a>
 
-              <br />
+        <a
+          href="../nav/courseNav.html"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-book fa-2x" style="color: #de0d0d"></i>
+          Courses
+        </a>
 
-              <p>
-                <label for="user_title">Title:</label>
-                <input id="user_title" />
-              </p>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-calendar-days fa-2x" style="color: #de0d0d"></i>
+          Calendar
+        </a>
 
-              <h3>Contact</h3>
-              <p>
-                No registered services, you can add some on the
-                <a href="#">settings</a> page.
-              </p>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-inbox fa-2x" style="color: #de0d0d"></i>
+          Inbox
+        </a>
 
-              <h3>Contact</h3>
-              <p>
-                No registered services, you can add some on the
-                <a href="#">settings</a> page.
-              </p>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-clock fa-2x" style="color: #de0d0d"></i>
+          History
+        </a>
 
-              <h3>Biography</h3>
-              <p>
-                <label for="user_bio">
-                  MSCS student @ Northeastern | Teaching Assistant CS4530 |
-                  Ex-SDE @ Josh Softwares | Ex-Wolffkraft | TS | JS | React |
-                  Node | Python | Deep Learning | Reinforcement Learning
-                </label>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-network-wired fa-2x" style="color: #de0d0d"></i>
+          Studio
+        </a>
+
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-c fa-2x" style="color: #de0d0d"></i>
+          Commons
+        </a>
+
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-question fa-2x" style="color: #de0d0d"></i>
+          Help
+        </a>
+      </div>
+
+      <div class="list-group m-5">
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Notifications
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100"
+          style="
+            color: black;
+            font-size: 22px;
+            border: 0;
+            border-left: 3px black solid;
+          "
+        >
+          Profile
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Files
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Settings
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          ePortfolios
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Shared Content
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          The Hub
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Quickly Course Tools
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Global Announcements
+        </a>
+      </div>
+
+      <table border="0" width="100%">
+        <tbody>
+          <tr valign="baseline">
+            <td>
+              <form>
+                <h2>Aryan Jain</h2>
+                <label for="user_name">Name:*</label>
+                <input id="user_name" placeholder="Aryan Jain" />
+                <label for="user_pronounce">Pronouns</label>
+                <select id="user_pronounce">
+                  <option value="None">None</option>
+                  <option value="his">He/Him/His</option>
+                  <option value="her">She/Her</option>
+                  <option value="other">Other</option>
+                </select>
 
                 <br />
-                <textarea id="user_bio" cols="60" rows="3">
-                  MSCS student @ Northeastern | Teaching Assistant CS4530 | Ex-SDE @
-                  Josh Softwares | Ex-Wolffkraft | TS | JS | React | Node | Python |
-                  Deep Learning | Reinforcement Learning
-                </textarea>
-              </p>
 
-              <h3>Links</h3>
-              <ul>
-                <li>
-                  <a href="#">Youtube </a> &nbsp;Links to an external site
-                </li>
-              </ul>
+                <p>
+                  <label for="user_title">Title:</label>
+                  <input id="user_title" />
+                </p>
 
-              <table border="0" width="20%">
-                <thead>
-                  <th>Title</th>
-                  <th></th>
-                  <th>URL</th>
-                  <th></th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input id="url_title" placeholder="YouTube" /></td>
-                    <td>&rarr;</td>
-                    <td><input id="url_val" placeholder="YouTube" /></td>
-                    <td><a href="#">Remove</a></td>
+                <h3>Contact</h3>
+                <p>
+                  No registered services, you can add some on the
+                  <a href="#">settings</a> page.
+                </p>
+
+                <h3>Contact</h3>
+                <p>
+                  No registered services, you can add some on the
+                  <a href="#">settings</a> page.
+                </p>
+
+                <h3>Biography</h3>
+                <p>
+                  <label for="user_bio">
+                    MSCS student @ Northeastern | Teaching Assistant CS4530 |
+                    Ex-SDE @ Josh Softwares | Ex-Wolffkraft | TS | JS | React |
+                    Node | Python | Deep Learning | Reinforcement Learning
+                  </label>
+
+                  <br />
+                  <textarea id="user_bio" cols="60" rows="3">
+                    MSCS student @ Northeastern | Teaching Assistant CS4530 | Ex-SDE @
+                    Josh Softwares | Ex-Wolffkraft | TS | JS | React | Node | Python |
+                    Deep Learning | Reinforcement Learning
+                  </textarea>
+                </p>
+
+                <h3>Links</h3>
+                <ul>
+                  <li>
+                    <a href="#">Youtube </a> &nbsp;Links to an external site
+                  </li>
+                </ul>
+
+                <table border="0" width="20%">
+                  <thead>
+                    <th>Title</th>
+                    <th></th>
+                    <th>URL</th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input id="url_title" placeholder="YouTube" /></td>
+                      <td>&rarr;</td>
+                      <td><input id="url_val" placeholder="YouTube" /></td>
+                      <td><a href="#">Remove</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <button>Add another link</button>
+
+                <br />
+
+                <table>
+                  <tr valign="baseline">
+                    <a href="./index.html" style="text-decoration: none">
+                      <button type="button">Cancel</button>
+                    </a>
+                    <a href="./index.html" style="text-decoration: none">
+                      <button type="button">Save Profile</button>
+                    </a>
                   </tr>
-                </tbody>
-              </table>
+                </table>
 
-              <button>Add another link</button>
-
-              <br />
-
-              <table>
-                <tr valign="baseline">
-                  <button>Cancel</button>
-                  <button>Save Profile</button>
-                </tr>
-              </table>
-
-              <table>
-                <tr valign="baseline">
-                  <a><button>Edit Profile</button></a>
-                  <a href="index.html"
-                    ><button type="button">Cancel Editing</button></a
-                  >
-                </tr>
-              </table>
-            </form>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+                <table>
+                  <tr valign="baseline">
+                    <a><button>Edit Profile</button></a>
+                    <a href="./index.html" style="text-decoration: none">
+                      <button type="button">Cancel Editing</button>
+                    </a>
+                  </tr>
+                </table>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
