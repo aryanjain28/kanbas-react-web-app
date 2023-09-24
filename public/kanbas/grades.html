@@ -3,175 +3,390 @@
   <head>
     <meta charset="UTF-8" />
     <title>Grades</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
-    <table border="0" width="100%">
-      <tr valign="baseline">
-        <td>
-          <ul>
-            <li><a href="./nav/profileNav.html">Account</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="./nav/courseNav.html">Courses</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </td>
+    <div class="d-flex float-left">
+      <div class="d-flex flex-column h-100 float-left">
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black"
+        >
+          <i class="fa-solid fa-n fa-5x" style="color: #de0d0d"></i>
+        </a>
 
-        <td>
-          <ul>
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="#">Modules</a></li>
-            <li><a href="#">Piazza</a></li>
-            <li><a href="#">Zoom Meetings</a></li>
-            <li><a href="./assignments/index.html">Assignments</a></li>
-            <li><a href="#">Quizzes</a></li>
-            <li><a href="#">Grades</a></li>
-            <li><a href="#">People</a></li>
-            <li><a href="#">Panopto Video</a></li>
-            <li><a href="#">Discussions</a></li>
-            <li><a href="#">Announcements</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="#">Files</a></li>
-            <li><a href="#">Rubrics</a></li>
-            <li><a href="#">Outcomes</a></li>
-            <li><a href="#">Collaborations</a></li>
-            <li><a href="#">Syllabus</a></li>
-            <li><a href="./settings/courseDetails/index.html">Settings</a></li>
-          </ul>
-        </td>
+        <a
+          href="./nav/profileNav.html"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-user fa-2x" style="color: white"></i>
+          Account
+        </a>
 
-        <td>
-          <select id="select_gradeBook">
-            <option selected value="gradebook">Gradebook</option>
-            <option value="somthing_else">Something Else</option>
-            <option value="some_string">Some String</option>
-          </select>
-          <button type="button">Import</button>
-          <select id="select_export">
-            <option selected value="export">Export</option>
-            <option value="import">Import</option>
-            <option value="do_something">Do Something</option>
-          </select>
-          <button type="button">Configure</button>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-gauge fa-2x" style="color: #de0d0d"></i>
+          Dashboard
+        </a>
 
-          <h2>Student Names</h2>
-          <input id="student_search_input" placeholder="Search Students" />
-          <br />
+        <a
+          href="./nav/courseNav.html"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: white; color: #de0d0d"
+        >
+          <i class="fa-solid fa-book fa-2x"></i>
+          Courses
+        </a>
 
-          <h2>Assignment Names</h2>
-          <input
-            id="assignments_search_input"
-            placeholder="Search Assignments"
-          />
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-calendar-days fa-2x" style="color: #de0d0d"></i>
+          Calendar
+        </a>
 
-          <br />
-          <br />
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-inbox fa-2x" style="color: #de0d0d"></i>
+          Inbox
+        </a>
 
-          <button type="button">Apply Filters</button>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-clock fa-2x" style="color: #de0d0d"></i>
+          History
+        </a>
 
-          <br />
-          <br />
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-network-wired fa-2x" style="color: #de0d0d"></i>
+          Studio
+        </a>
 
-          <table border="1" width="100%">
-            <thead>
-              <th>
-                Student Name <br />
-                Out of 100
-              </th>
-              <th>
-                A1 SETUP<br />
-                Out of 100
-              </th>
-              <th>
-                A2 HTML<br />
-                Out of 100
-              </th>
-              <th>
-                A3 CSS<br />
-                Out of 100
-              </th>
-              <th>
-                A4 BOOTSTRAP<br />
-                Out of 100
-              </th>
-              <th>
-                A5 JS<br />
-                Out of 100
-              </th>
-              <th>
-                A6 React<br />
-                Out of 100
-              </th>
-              <th>
-                A7 Node<br />
-                Out of 100
-              </th>
-            </thead>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-c fa-2x" style="color: #de0d0d"></i>
+          Commons
+        </a>
 
-            <tbody>
-              <tr>
-                <td>Captain America</td>
-                <td><input placeholder="100" size="5" value="100" /></td>
-                <td>41</td>
-                <td>93</td>
-                <td>34</td>
-                <td>24</td>
-                <td>53</td>
-                <td>43</td>
-              </tr>
+        <a
+          href="#"
+          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+          style="text-decoration: none; background: black; color: white"
+        >
+          <i class="fa-solid fa-question fa-2x" style="color: #de0d0d"></i>
+          Help
+        </a>
+      </div>
 
-              <tr>
-                <td>Ironman</td>
-                <td>10</td>
-                <td><input placeholder="100" size="5" value="100" /></td>
-                <td>23</td>
-                <td>34</td>
-                <td>34</td>
-                <td>88</td>
-                <td>14</td>
-              </tr>
+      <div class="list-group m-5">
+        <a
+          href="./home.html"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Home
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Module
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Piazza
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Zoom Meetings
+        </a>
+        <a
+          href="./assignments/index.html"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Assignments
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Quizzes
+        </a>
 
-              <tr>
-                <td>Black Widow</td>
-                <td>2</td>
-                <td>53</td>
-                <td><input placeholder="100" size="5" value="100" /></td>
-                <td>53</td>
-                <td>11</td>
-                <td>42</td>
-                <td>72</td>
-              </tr>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100"
+          style="
+            color: black;
+            font-size: 22px;
+            border: 0;
+            border-radius: 0;
+            border-left: 3px black solid;
+          "
+        >
+          Grades
+        </a>
 
-              <tr>
-                <td>Hulk</td>
-                <td>34</td>
-                <td>24</td>
-                <td>63</td>
-                <td><input placeholder="100" size="5" value="100" /></td>
-                <td>42</td>
-                <td>88</td>
-                <td>92</td>
-              </tr>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          People
+        </a>
 
-              <tr>
-                <td>Black Panther</td>
-                <td>61</td>
-                <td>53</td>
-                <td>5</td>
-                <td>34</td>
-                <td><input placeholder="100" size="5" value="100" /></td>
-                <td>23</td>
-                <td>53</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </table>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Panopto Video
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Discussions
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Announcements
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Pages
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Files
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Rubrics
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Outcomes
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Collaborations
+        </a>
+
+        <a
+          href="#"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Syllabus
+        </a>
+
+        <a
+          href="./settings/courseDetails/index.html"
+          class="list-group-item list-group-item-action w-100 border-0"
+          style="color: #de0d0d; font-size: 22px"
+        >
+          Settings
+        </a>
+      </div>
+
+      <table border="0" width="100%">
+        <tr valign="baseline">
+          <td>
+            <select id="select_gradeBook">
+              <option selected value="gradebook">Gradebook</option>
+              <option value="somthing_else">Something Else</option>
+              <option value="some_string">Some String</option>
+            </select>
+            <button type="button">Import</button>
+            <select id="select_export">
+              <option selected value="export">Export</option>
+              <option value="import">Import</option>
+              <option value="do_something">Do Something</option>
+            </select>
+            <button type="button">Configure</button>
+
+            <h2>Student Names</h2>
+            <input id="student_search_input" placeholder="Search Students" />
+            <br />
+
+            <h2>Assignment Names</h2>
+            <input
+              id="assignments_search_input"
+              placeholder="Search Assignments"
+            />
+
+            <br />
+            <br />
+
+            <button type="button">Apply Filters</button>
+
+            <br />
+            <br />
+
+            <table border="1" width="100%">
+              <thead>
+                <th>
+                  Student Name <br />
+                  Out of 100
+                </th>
+                <th>
+                  A1 SETUP<br />
+                  Out of 100
+                </th>
+                <th>
+                  A2 HTML<br />
+                  Out of 100
+                </th>
+                <th>
+                  A3 CSS<br />
+                  Out of 100
+                </th>
+                <th>
+                  A4 BOOTSTRAP<br />
+                  Out of 100
+                </th>
+                <th>
+                  A5 JS<br />
+                  Out of 100
+                </th>
+                <th>
+                  A6 React<br />
+                  Out of 100
+                </th>
+                <th>
+                  A7 Node<br />
+                  Out of 100
+                </th>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Captain America</td>
+                  <td><input placeholder="100" size="5" value="100" /></td>
+                  <td>41</td>
+                  <td>93</td>
+                  <td>34</td>
+                  <td>24</td>
+                  <td>53</td>
+                  <td>43</td>
+                </tr>
+
+                <tr>
+                  <td>Ironman</td>
+                  <td>10</td>
+                  <td><input placeholder="100" size="5" value="100" /></td>
+                  <td>23</td>
+                  <td>34</td>
+                  <td>34</td>
+                  <td>88</td>
+                  <td>14</td>
+                </tr>
+
+                <tr>
+                  <td>Black Widow</td>
+                  <td>2</td>
+                  <td>53</td>
+                  <td><input placeholder="100" size="5" value="100" /></td>
+                  <td>53</td>
+                  <td>11</td>
+                  <td>42</td>
+                  <td>72</td>
+                </tr>
+
+                <tr>
+                  <td>Hulk</td>
+                  <td>34</td>
+                  <td>24</td>
+                  <td>63</td>
+                  <td><input placeholder="100" size="5" value="100" /></td>
+                  <td>42</td>
+                  <td>88</td>
+                  <td>92</td>
+                </tr>
+
+                <tr>
+                  <td>Black Panther</td>
+                  <td>61</td>
+                  <td>53</td>
+                  <td>5</td>
+                  <td>34</td>
+                  <td><input placeholder="100" size="5" value="100" /></td>
+                  <td>23</td>
+                  <td>53</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
