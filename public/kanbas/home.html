@@ -457,35 +457,132 @@
           </div>
 
           <!-- Last -->
-          <div class="col-3">
-            <h1>Course Status</h1>
-            <button type="button">Unpublish</button>
-            <button type="button">Published</button>
+          <div class="col-3 my-4">
+            <h5>Course Status</h5>
 
-            <ul>
-              <li><a href="#">Import Existing Content</a></li>
-              <li><a href="#">Import From Commons</a></li>
-              <li><a href="#">Choose Home Page</a></li>
-              <li><a href="#">View Course Stream</a></li>
-              <li><a href="#">New Announcement</a></li>
-              <li><a href="#">New Analytics</a></li>
-              <li><a href="#">View Course Notifications</a></li>
+            <div class="d-flex align-items-center justify-content-between">
+              <button type="button" class="btn mx-1 w-50 btn-secondary">
+                <i class="fa-solid fa-ban"></i>
+                Unpublish
+              </button>
+              <button type="button" class="btn mx-1 w-50 btn-success">
+                <i class="fa-solid fa-circle-check"></i>
+                Published
+              </button>
+            </div>
+
+            <ul class="list-group my-3 gap-2 list-group-flush">
+              <li class="list-group-item bg-light border-0">
+                <i class="text-muted fa-solid fa-file-import"></i>
+                <a style="text-decoration: none" href="#" class="text-dark mx-2"
+                  >Import Existing Content</a
+                >
+              </li>
+
+              <li class="list-group-item bg-light border-0">
+                <i class="text-muted fa-regular fa-circle-right"></i>
+                <a style="text-decoration: none" href="#" class="text-dark mx-2"
+                  >Import From Commons</a
+                >
+              </li>
+
+              <li class="list-group-item bg-light border-0">
+                <i class="text-muted fa-solid fa-bullseye"></i>
+                <a style="text-decoration: none" href="#" class="text-dark mx-2"
+                  >Choose Home Page</a
+                >
+              </li>
+
+              <li class="list-group-item bg-light border-0">
+                <i class="text-muted fa-solid fa-chart-simple"></i>
+                <a style="text-decoration: none" href="#" class="text-dark mx-2"
+                  >View Course Stream
+                </a>
+              </li>
+
+              <li class="list-group-item bg-light border-0">
+                <i class="text-muted fa-solid fa-bullhorn"></i>
+                <a style="text-decoration: none" href="#" class="text-dark mx-2"
+                  >New Announcement
+                </a>
+              </li>
+
+              <li class="list-group-item bg-light border-0">
+                <i class="text-muted fa-solid fa-chart-simple"></i>
+                <a style="text-decoration: none" href="#" class="text-dark mx-2"
+                  >New Analytics
+                </a>
+              </li>
+
+              <li class="list-group-item bg-light border-0">
+                <i class="text-muted fa-solid fa-bell"></i>
+                <a style="text-decoration: none" href="#" class="text-dark mx-2"
+                  >View Course Notifications
+                </a>
+              </li>
             </ul>
 
-            <h1>Comming Up</h1>
-            <a href="#">View Calendar</a>
+            <h6>To Do</h6>
+            <hr class="p-0" />
+            <div class="card border-0">
+              <div class="card-body">
+                <h5 class="card-title text-danger mx-2">
+                  <i class="text-danger fa-1 fa-solid fa-xs"></i>
+                  Grade A1 - ENV + HTML
+                </h5>
+                <p class="card-text">100 points | Sep 19 at 11:59pm</p>
+              </div>
+            </div>
 
-            <ul>
-              <li>
-                <a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a>
-              </li>
-              <li>
-                <a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a>
-              </li>
-              <li>
-                <a href="#">CS5610 06 SP23 LEcture Sep 11 at 6pm</a>
-              </li>
-            </ul>
+            <div class="d-flex align-items-center justify-content-between">
+              <h6 class="my-3">Comming Up</h6>
+              <a style="text-decoration: none" class="text-danger" href="#">
+                <i class="text-danger fa-regular fa-calendar-days"></i>
+                View Calendar
+              </a>
+            </div>
+            <hr class="p-0 m-0" />
+
+            <div class="card border-0">
+              <div class="card-body row">
+                <div class="col-1">
+                  <i class="fa-solid fa-calendar-day fa-md text-danger"></i>
+                </div>
+                <div class="col">
+                  <h5 class="card-title text-danger">Lecture</h5>
+                  <div class="card-text text-muted">CS4530.20134.20202312</div>
+                  <div class="card-text text-muted">Sep 19 at 11:59pm</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0">
+              <div class="card-body row">
+                <div class="col-1">
+                  <i class="fa-solid fa-calendar-day fa-md text-danger"></i>
+                </div>
+                <div class="col">
+                  <h5 class="card-title text-danger">CS5610 06 SP23 Lecture</h5>
+                  <div class="card-text text-muted">CS4530.20134.20202312</div>
+                  <div class="card-text text-muted">Sep 19 at 6:59pm</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card border-0">
+              <div class="card-body row">
+                <div class="col-1">
+                  <i class="fa-solid fa-calendar-day fa-md text-danger"></i>
+                </div>
+                <div class="col">
+                  <h5 class="card-title text-danger">CS5610 06 SP23 Web Dev</h5>
+                  <div class="card-text text-muted">CS4530.20134.20202312</div>
+                  <div class="card-text text-muted">Sep 19 at 11:59pm</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-danger">12 more in the next week...</p>
           </div>
         </div>
       </div>
