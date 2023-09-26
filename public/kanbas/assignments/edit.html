@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-100" lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Edit Assignment</title>
@@ -17,504 +17,500 @@
   </head>
 
   <body>
-    <div class="d-flex float-left">
-      <!-- MAIN NAV -->
-      <div class="d-flex flex-column h-100 float-left">
-        <a
-          href="#"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black"
-        >
-          <i class="fa-solid fa-n fa-5x" style="color: #de0d0d"></i>
-        </a>
+    <!-- MAIN NAV -->
+    <div
+      class="d-flex flex-column float-left position-fixed h-100"
+      style="background: black"
+    >
+      <a
+        href="#"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black"
+      >
+        <i class="fa-solid fa-n fa-5x" style="color: #de0d0d"></i>
+      </a>
 
-        <a
-          href="../nav/profileNav.html"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-user fa-2x" style="color: white"></i>
-          Account
-        </a>
+      <a
+        href="../nav/profileNav.html"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-user fa-2x" style="color: white"></i>
+        Account
+      </a>
 
-        <a
-          href="../dashboard/index.html"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-gauge fa-2x" style="color: #de0d0d"></i>
-          Dashboard
-        </a>
+      <a
+        href="../dashboard/index.html"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-gauge fa-2x" style="color: #de0d0d"></i>
+        Dashboard
+      </a>
 
-        <a
-          href="../nav/courseNav.html"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: white; color: #de0d0d"
-        >
-          <i class="fa-solid fa-book fa-2x"></i>
-          Courses
-        </a>
+      <a
+        href="../nav/courseNav.html"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: white; color: #de0d0d"
+      >
+        <i class="fa-solid fa-book fa-2x"></i>
+        Courses
+      </a>
 
-        <a
-          href="#"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-calendar-days fa-2x" style="color: #de0d0d"></i>
-          Calendar
-        </a>
+      <a
+        href="#"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-calendar-days fa-2x" style="color: #de0d0d"></i>
+        Calendar
+      </a>
 
-        <a
-          href="#"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-inbox fa-2x" style="color: #de0d0d"></i>
-          Inbox
-        </a>
+      <a
+        href="#"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-inbox fa-2x" style="color: #de0d0d"></i>
+        Inbox
+      </a>
 
-        <a
-          href="#"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-clock fa-2x" style="color: #de0d0d"></i>
-          History
-        </a>
+      <a
+        href="#"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-clock fa-2x" style="color: #de0d0d"></i>
+        History
+      </a>
 
-        <a
-          href="#"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-network-wired fa-2x" style="color: #de0d0d"></i>
-          Studio
-        </a>
+      <a
+        href="#"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-network-wired fa-2x" style="color: #de0d0d"></i>
+        Studio
+      </a>
 
-        <a
-          href="#"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-c fa-2x" style="color: #de0d0d"></i>
-          Commons
-        </a>
+      <a
+        href="#"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-c fa-2x" style="color: #de0d0d"></i>
+        Commons
+      </a>
 
-        <a
-          href="#"
-          class="d-inline-flex flex-column align-items-center justify-content-center p-3"
-          style="text-decoration: none; background: black; color: white"
-        >
-          <i class="fa-solid fa-question fa-2x" style="color: #de0d0d"></i>
-          Help
+      <a
+        href="#"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        style="text-decoration: none; background: black; color: white"
+      >
+        <i class="fa-solid fa-question fa-2x" style="color: #de0d0d"></i>
+        Help
+      </a>
+    </div>
+
+    <!-- BODY -->
+    <div
+      class="d-flex flex-column h-100 float-left w-100"
+      style="padding-left: 5rem"
+    >
+      <!-- TOP HEADER -->
+      <div class="d-flex align-items-center justify-content-between mx-5 mt-2">
+        <div class="d-flex align-items-center justify-content-center gap-3">
+          <i class="fa-solid fa-bars fa-2x text-danger"></i>
+          <nav style="--bs-breadcrumb-divider: '>'">
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item">
+                <a class="text-danger" style="text-decoration: none" href="#"
+                  >CS4550.12361.202410</a
+                >
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Assignments
+              </li>
+
+              <li class="breadcrumb-item active" aria-current="page">
+                A1 - ENV + HTML
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <a href="edit.html">
+          <button
+            class="btn btn-light p-2 px-3 gap-2 mx-2"
+            id="edit_profile"
+            type="button"
+            style="border: 1px lightgray solid; border-radius: 2px"
+          >
+            <i style="color: gray" class="fa-solid fa-glasses mx-1"></i>
+            Student View
+          </button>
         </a>
       </div>
+      <hr class="mx-5" />
 
-      <!-- BODY -->
-      <div class="h-100 float-left w-100">
-        <!-- TOP HEADER -->
-        <div
-          class="d-flex align-items-center justify-content-between mx-5 mt-2"
-        >
-          <div class="d-flex align-items-center justify-content-center gap-3">
-            <i class="fa-solid fa-bars fa-2x text-danger"></i>
-            <nav style="--bs-breadcrumb-divider: '>'">
-              <ol class="breadcrumb m-0">
-                <li class="breadcrumb-item">
-                  <a class="text-danger" style="text-decoration: none" href="#"
-                    >CS4550.12361.202410</a
-                  >
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Assignments
-                </li>
-
-                <li class="breadcrumb-item active" aria-current="page">
-                  A1 - ENV + HTML
-                </li>
-              </ol>
-            </nav>
-          </div>
-
-          <a href="edit.html">
-            <button
-              class="btn btn-light p-2 px-3 gap-2 mx-2"
-              id="edit_profile"
-              type="button"
-              style="border: 1px lightgray solid; border-radius: 2px"
+      <div class="row">
+        <!-- SEC NAV -->
+        <div class="col-2">
+          <div class="list-group m-5">
+            <h6 class="text-truncate" style="width: 150px">
+              2024_10_Fall_1_Web_Dev_Jose
+            </h6>
+            <a
+              href="../home.html"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
             >
-              <i style="color: gray" class="fa-solid fa-glasses mx-1"></i>
-              Student View
-            </button>
-          </a>
-        </div>
-        <hr class="mx-5" />
+              Home
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Module
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Piazza
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Zoom Meetings
+            </a>
+            <a
+              href="./index.html"
+              class="list-group-item list-group-item-action w-100"
+              style="
+                color: black;
+                font-size: 22px;
+                border: 0;
+                border-radius: 0;
+                border-left: 3px black solid;
+              "
+            >
+              Assignments
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Quizzes
+            </a>
 
-        <div class="row">
-          <!-- SEC NAV -->
-          <div class="col-2">
-            <div class="list-group m-5">
-              <h6 class="text-truncate" style="width: 150px">
-                2024_10_Fall_1_Web_Dev_Jose
-              </h6>
-              <a
-                href="../home.html"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Module
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Piazza
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Zoom Meetings
-              </a>
-              <a
-                href="./index.html"
-                class="list-group-item list-group-item-action w-100"
-                style="
-                  color: black;
-                  font-size: 22px;
-                  border: 0;
-                  border-radius: 0;
-                  border-left: 3px black solid;
-                "
-              >
-                Assignments
-              </a>
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Quizzes
-              </a>
+            <a
+              href="../grades.html"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Grades
+            </a>
 
-              <a
-                href="../grades.html"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Grades
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              People
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                People
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Panopto Video
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Panopto Video
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Discussions
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Discussions
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Announcements
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Announcements
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Pages
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Pages
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Files
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Files
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Rubrics
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Rubrics
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Outcomes
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Outcomes
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Collaborations
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Collaborations
-              </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Syllabus
+            </a>
 
-              <a
-                href="#"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Syllabus
-              </a>
-
-              <a
-                href="../settings/courseDetails/index.html"
-                class="list-group-item list-group-item-action w-100 border-0"
-                style="color: #de0d0d; font-size: 22px"
-              >
-                Settings
-              </a>
-            </div>
+            <a
+              href="../settings/courseDetails/index.html"
+              class="list-group-item list-group-item-action w-100 border-0"
+              style="color: #de0d0d; font-size: 22px"
+            >
+              Settings
+            </a>
           </div>
+        </div>
 
-          <!-- SEC BODY -->
-          <div class="col mx-5">
-            <form>
-              <div class="d-flex justify-content-between">
-                <div></div>
-                <div class="d-flex text-success align-items-center gap-3">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <div class="h6 m-0 font-weight-bold">Published</div>
-                  <button class="btn btn-outline-dark" type="button">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </button>
+        <!-- SEC BODY -->
+        <div class="col mx-5">
+          <form>
+            <div class="d-flex justify-content-between">
+              <div></div>
+              <div class="d-flex text-success align-items-center gap-3">
+                <i class="fa-solid fa-circle-check"></i>
+                <div class="h6 m-0 font-weight-bold">Published</div>
+                <button class="btn btn-outline-dark" type="button">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+              </div>
+            </div>
+
+            <hr />
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-center gap-4"
+            >
+              <div class="d-flex flex-column w-100">
+                <h3 class="h6 float-left">Assignment Name</h3>
+
+                <input
+                  class="form-control w-100"
+                  value="A1 - ENV + HTML"
+                  placeholder="Assignment Name"
+                />
+              </div>
+
+              <textarea class="form-control w-100" cols="30" rows="5">
+                  This is the assignment description.
+                  </textarea
+              >
+
+              <div class="row w-75 align-items-center justify-content-center">
+                <div class="col-3">Points</div>
+                <div class="col">
+                  <input class="form-control" id="points" />
                 </div>
               </div>
 
-              <hr />
-
-              <div
-                class="d-flex flex-column align-items-center justify-content-center gap-4"
-              >
-                <div class="d-flex flex-column w-100">
-                  <h3 class="h6 float-left">Assignment Name</h3>
-
-                  <input
-                    class="form-control w-100"
-                    value="A1 - ENV + HTML"
-                    placeholder="Assignment Name"
-                  />
+              <div class="row w-75 align-items-center justify-content-center">
+                <div class="col-3">Assignment Group</div>
+                <div class="col">
+                  <select class="form-control">
+                    <option value="ASSIGNMENTS">ASSIGNMENTS</option>
+                    <option value="Quizzes">Quizzes</option>
+                    <option value="Projects">Projects</option>
+                    <option value="Exams">Exams</option>
+                  </select>
                 </div>
+              </div>
 
-                <textarea class="form-control w-100" cols="30" rows="5">
-                  This is the assignment description.
-                  </textarea
-                >
-
-                <div class="row w-75 align-items-center justify-content-center">
-                  <div class="col-3">Points</div>
-                  <div class="col">
-                    <input class="form-control" id="points" />
+              <div class="row w-75 align-items-center justify-content-center">
+                <div class="col-3"></div>
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                    <label class="form-check-label">
+                      Do not count this assignment towards the find grade.
+                    </label>
                   </div>
                 </div>
+              </div>
 
-                <div class="row w-75 align-items-center justify-content-center">
-                  <div class="col-3">Assignment Group</div>
-                  <div class="col">
-                    <select class="form-control">
-                      <option value="ASSIGNMENTS">ASSIGNMENTS</option>
-                      <option value="Quizzes">Quizzes</option>
-                      <option value="Projects">Projects</option>
-                      <option value="Exams">Exams</option>
+              <div class="row w-75 align-items-start justify-content-center">
+                <div class="col-3">Submission Type</div>
+                <div class="col">
+                  <div class="border p-3" style="border-radius: 3px">
+                    <select class="form-control w-75">
+                      <option value="Online">Online</option>
+                      <option value="Offline">Offline</option>
                     </select>
-                  </div>
-                </div>
 
-                <div class="row w-75 align-items-center justify-content-center">
-                  <div class="col-3"></div>
-                  <div class="col">
-                    <div class="form-check">
+                    <div class="h5 my-3 p3-">Online Entry Options</div>
+
+                    <div class="form-check my-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      <label class="form-check-label"> Text Entry </label>
+                    </div>
+
+                    <div class="form-check my-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      <label class="form-check-label"> Website URL </label>
+                    </div>
+
+                    <div class="form-check my-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      <label class="form-check-label"> Media Recordings </label>
+                    </div>
+
+                    <div class="form-check my-3">
                       <input
                         class="form-check-input"
                         type="checkbox"
                         value=""
                       />
                       <label class="form-check-label">
-                        Do not count this assignment towards the find grade.
+                        Student Annotation
                       </label>
                     </div>
-                  </div>
-                </div>
 
-                <div class="row w-75 align-items-start justify-content-center">
-                  <div class="col-3">Submission Type</div>
-                  <div class="col">
-                    <div class="border p-3" style="border-radius: 3px">
-                      <select class="form-control w-75">
-                        <option value="Online">Online</option>
-                        <option value="Offline">Offline</option>
-                      </select>
-
-                      <div class="h5 my-3 p3-">Online Entry Options</div>
-
-                      <div class="form-check my-3">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <label class="form-check-label"> Text Entry </label>
-                      </div>
-
-                      <div class="form-check my-3">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <label class="form-check-label"> Website URL </label>
-                      </div>
-
-                      <div class="form-check my-3">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <label class="form-check-label">
-                          Media Recordings
-                        </label>
-                      </div>
-
-                      <div class="form-check my-3">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <label class="form-check-label">
-                          Student Annotation
-                        </label>
-                      </div>
-
-                      <div class="form-check my-3">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                        />
-                        <label class="form-check-label"> File Uploads </label>
-                      </div>
+                    <div class="form-check my-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                      />
+                      <label class="form-check-label"> File Uploads </label>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="row w-75 align-items-start justify-content-center">
-                  <div class="col-3">Assign</div>
-                  <div class="col">
-                    <div
-                      class="d-flex flex-column border p-3 gap-3"
-                      style="border-radius: 3px"
-                    >
-                      <div>
-                        <div class="h6">Assign To</div>
-                        <select class="form-control">
-                          <option value="Everyone">Everyone</option>
-                          <option value="notEveryone">Not Everyone</option>
-                          <option value="some">None</option>
-                        </select>
-                      </div>
+              <div class="row w-75 align-items-start justify-content-center">
+                <div class="col-3">Assign</div>
+                <div class="col">
+                  <div
+                    class="d-flex flex-column border p-3 gap-3"
+                    style="border-radius: 3px"
+                  >
+                    <div>
+                      <div class="h6">Assign To</div>
+                      <select class="form-control">
+                        <option value="Everyone">Everyone</option>
+                        <option value="notEveryone">Not Everyone</option>
+                        <option value="some">None</option>
+                      </select>
+                    </div>
 
-                      <div>
-                        <div class="h6">Due</div>
+                    <div>
+                      <div class="h6">Due</div>
+                      <input class="form-control w-100" type="date" />
+                    </div>
+
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="h6">Available form</div>
                         <input class="form-control w-100" type="date" />
                       </div>
 
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="h6">Available form</div>
-                          <input class="form-control w-100" type="date" />
-                        </div>
-
-                        <div class="col-6">
-                          <div class="h6">Until</div>
-                          <input class="form-control w-100" type="date" />
-                        </div>
+                      <div class="col-6">
+                        <div class="h6">Until</div>
+                        <input class="form-control w-100" type="date" />
                       </div>
-
-                      <button class="btn btn-outline-dark" type="button">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
                     </div>
-                  </div>
-                </div>
 
-                <hr class="my-1 w-100" />
-
-                <div
-                  class="d-flex align-items-center justify-content-between w-100"
-                >
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" />
-                    <label class="form-check-label">
-                      Notify users that this content is changed.
-                    </label>
-                  </div>
-
-                  <div>
-                    <button class="btn btn-outline-dark">
-                      <a
-                        class="text-dark"
-                        style="text-decoration: none"
-                        href="index.html"
-                      >
-                        Cancel</a
-                      >
-                    </button>
-
-                    <button class="btn btn-danger">
-                      <a
-                        class="text-white"
-                        style="text-decoration: none"
-                        href="index.html"
-                      >
-                        Save</a
-                      >
+                    <button class="btn btn-outline-dark" type="button">
+                      <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
                 </div>
-
-                <hr class="my-1 w-100" />
               </div>
-            </form>
-          </div>
+
+              <hr class="my-1 w-100" />
+
+              <div
+                class="d-flex align-items-center justify-content-between w-100"
+              >
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" />
+                  <label class="form-check-label">
+                    Notify users that this content is changed.
+                  </label>
+                </div>
+
+                <div>
+                  <button class="btn btn-outline-dark">
+                    <a
+                      class="text-dark"
+                      style="text-decoration: none"
+                      href="index.html"
+                    >
+                      Cancel</a
+                    >
+                  </button>
+
+                  <button class="btn btn-danger">
+                    <a
+                      class="text-white"
+                      style="text-decoration: none"
+                      href="index.html"
+                    >
+                      Save</a
+                    >
+                  </button>
+                </div>
+              </div>
+
+              <hr class="my-1 w-100" />
+            </div>
+          </form>
         </div>
       </div>
     </div>
