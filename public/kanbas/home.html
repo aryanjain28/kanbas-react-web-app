@@ -34,12 +34,12 @@
   <body>
     <!-- Main NAV: Fixed -->
     <div
-      class="d-flex flex-column float-left position-fixed h-100"
+      class="d-flex flex-column d-none d-xl-block d-xxl-block position-fixed h-100 justify-content-center align-items-center"
       style="background: black; width: 7rem"
     >
       <a
         href="#"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black"
       >
         <img class="w-100" src="../images/NU_LOGO.png" />
@@ -48,7 +48,7 @@
 
       <a
         href="./nav/profileNav.html"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-user fa-2x" style="color: white"></i>
@@ -57,7 +57,7 @@
 
       <a
         href="./dashboard/index.html"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-gauge fa-2x" style="color: #de0d0d"></i>
@@ -66,7 +66,7 @@
 
       <a
         href="./nav/courseNav.html"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: white; color: #de0d0d"
       >
         <i class="fa-solid fa-book fa-2x"></i>
@@ -75,7 +75,7 @@
 
       <a
         href="#"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-calendar-days fa-2x" style="color: #de0d0d"></i>
@@ -84,7 +84,7 @@
 
       <a
         href="#"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-inbox fa-2x" style="color: #de0d0d"></i>
@@ -93,7 +93,7 @@
 
       <a
         href="#"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-clock fa-2x" style="color: #de0d0d"></i>
@@ -102,7 +102,7 @@
 
       <a
         href="#"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-network-wired fa-2x" style="color: #de0d0d"></i>
@@ -111,7 +111,7 @@
 
       <a
         href="#"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-c fa-2x" style="color: #de0d0d"></i>
@@ -120,11 +120,142 @@
 
       <a
         href="#"
-        class="d-inline-flex flex-column align-items-center justify-content-center p-3"
+        class="d-inline-flex flex-column align-items-center justify-content-center p-3 w-100"
         style="text-decoration: none; background: black; color: white"
       >
         <i class="fa-solid fa-question fa-2x" style="color: #de0d0d"></i>
         Help
+      </a>
+    </div>
+
+    <div
+      class="d-flex d-block d-lg-none justify-content-between align-items-center bg-black px-3 py-2 mb-3"
+    >
+      <i class="fa-solid fa-bars text-white"></i>
+      <div
+        class="d-flex flex-column text-white align-items-center"
+        style="text-decoration: underline"
+      >
+        <div style="font-size: 12px">CS4530.12631.20212</div>
+        <div style="font-size: 12px">Modules</div>
+      </div>
+      <div class="d-flex gap-3">
+        <i class="fa-solid fa-glasses text-white"></i>
+        <i class="fa-solid fa-xmark text-white"></i>
+      </div>
+    </div>
+
+    <!-- BODY: Visible Only On XS -->
+    <div class="d-flex d-block d-sm-none flex-column">
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-house mx-3"></i>
+        Home
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-recycle mx-3"></i>
+        Modules
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-plug mx-3"></i>
+        Piazza
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-plug mx-3"></i>
+        Zoom Meetings
+      </a>
+
+      <a
+        class="text-danger"
+        href="./assignments/index.html"
+        style="text-decoration: none"
+      >
+        <i class="fa-regular fa-pen-to-square mx-3"></i>
+        Assignments
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-rocket mx-3"></i>
+        Quizzes
+      </a>
+
+      <a class="text-danger" href="./grades.html" style="text-decoration: none">
+        <i class="fa-regular fa-pen-to-square mx-3"></i>
+        Grades
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-users mx-3"></i>
+        People
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-plug mx-3"></i>
+        Panopto Video
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-regular fa-comments mx-3"></i>
+        Discussions
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-bullhorn mx-3"></i>
+        Announcements
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-file mx-3"></i>
+        Pages
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-folder mx-3"></i>
+        Files
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-file-invoice mx-3"></i>
+        Rubrics
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-solid fa-bullseye mx-3"></i>
+        Outcomes
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-regular fa-circle mx-3"></i>
+        Collaborations
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-regular fa-file mx-3"></i>
+        Syllabus
+        <i class="fa-regular fa-eye-slash text-muted mx-4 fa-xs"></i>
+      </a>
+
+      <a class="text-danger" href="#" style="text-decoration: none">
+        <i class="fa-regular fa-plug mx-3"></i>
+        Progress Report (EAB Navigate)
+      </a>
+
+      <a
+        class="text-danger"
+        href="./settings/courseDetails/index.html"
+        style="text-decoration: none"
+      >
+        <i class="fa-solid fa-gear mx-3"></i>
+        Settings
       </a>
     </div>
 
@@ -134,7 +265,9 @@
       style="padding-left: 6rem; padding-right: 1rem"
     >
       <!-- TOP HEADER -->
-      <div class="d-flex align-items-center justify-content-between mx-5 mt-2">
+      <div
+        class="d-none d-lg-flex d-flex align-items-center justify-content-between mx-5 py-2"
+      >
         <div class="d-flex align-items-center justify-content-center gap-3">
           <i class="fa-solid fa-bars fa-2x text-danger"></i>
           <nav style="--bs-breadcrumb-divider: '>'">
@@ -158,17 +291,17 @@
             type="button"
             style="border: 1px lightgray solid; border-radius: 2px"
           >
-            <i style="color: gray" class="fa-solid fa-glasses mx-1"></i>
+            <i style="color: gray" class="fa-solid fa-glasses mx-3"></i>
             Student View
           </button>
         </a>
       </div>
-      <hr class="mx-5" />
+      <hr class="mx-5 d-none d-lg-block" />
 
       <!-- Secondary Body -->
       <div class="row">
         <!-- Sec Navigation -->
-        <div class="col-2 d-md-none d-lg-none d-xl-block">
+        <div class="col-2 d-none d-xl-block d-xxl-block">
           <div style="width: 150px" class="list-group mx-5 my-3">
             <h6 class="text-truncate" style="width: 150px">
               2024_10_Fall_1_Web_Dev_Jose
@@ -322,7 +455,7 @@
 
         <!-- Body -->
         <div
-          class="col d-flex flex-column align-items-start justify-content-start mx-5"
+          class="col d-flex d-none d-sm-block d-md-block d-xl-block d-xxl-block flex-column align-items-start justify-content-start"
         >
           <div class="d-flex w-100 align-items-center justify-content-end">
             <button
@@ -344,7 +477,7 @@
                 type="button"
                 data-bs-toggle="dropdown"
               >
-                <i class="fa-solid fa-check text-success mx-1"></i>
+                <i class="fa-solid fa-check text-success mx-3"></i>
                 Publish All
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">All</a></li>
@@ -805,7 +938,7 @@
         </div>
 
         <!-- Last -->
-        <div class="col-3 my-4 d-md-none d-lg-none d-xl-block">
+        <div class="col-3 my-4 d-none d-xl-block d-xxl-block">
           <h5>Course Status</h5>
 
           <div class="d-flex align-items-center justify-content-between">
