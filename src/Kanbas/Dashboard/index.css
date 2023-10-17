@@ -1,0 +1,12 @@
+.wd-dashboard-grid .col {
+    max-width: 270px;
+    min-width: 270px;
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.wd-dashboard-content {
+    padding-left: 25px;
+}
+

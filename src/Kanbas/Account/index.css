@@ -1,0 +1,26 @@
+.wd-header-container {
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.wd-link-container .col{
+    padding-bottom: 10px;
+}
+
+.btn.wd-edit-button.list-group-item.btn-secondary {
+    background-color: gray;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn.btn-danger.list-group-item {
+    background-color: red;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+
+}

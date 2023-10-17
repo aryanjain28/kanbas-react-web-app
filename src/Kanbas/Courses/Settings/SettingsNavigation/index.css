@@ -1,0 +1,14 @@
+.navbar .active{
+    color: black;
+}
+.navbar .navbar-nav .nav-link{
+    color: red;
+}
+
+.navbar .navbar-nav .active .nav-link{
+    color: black;
+}
+
+.navbar-nav {
+    height: 30px;
+}
