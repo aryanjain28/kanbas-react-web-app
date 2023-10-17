@@ -92,10 +92,11 @@ const KanbasNavigation = () => {
       {_ICONS.map(({ id, name, label, icon }) => (
         <Link
           key={id}
-          to={`/Kanbas/${label}`}
+          to={id === 1 ? "/" : `/Kanbas/${label}`}
           className={`list-group-item ${
             pathname.includes(label) ? "active" : ""
           }`}
+          style={id === 1 ? { background: "black" } : {}}
         >
           {icon}
           <br />
