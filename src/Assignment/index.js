@@ -54,10 +54,10 @@ const MainPage = () => {
             <tr>
               <td style={{ padding: 10 }}>3.</td>
               <td style={{ padding: 10 }}>
-                <a href="/Kanbas/Dashboard">Assignment-3</a>
+                <a href="https://a3--graceful-froyo-3e6a82.netlify.app/Kanbas/Dashboard">Assignment-3</a>
               </td>
               <td style={{ padding: 10 }}>
-                <a href="/Kanbas/Labs">Lab-3</a>
+                <a href="https://a3--graceful-froyo-3e6a82.netlify.app/Kanbas/Labs">Lab-3</a>
               </td>
               <td>--- / 100</td>
             </tr>
