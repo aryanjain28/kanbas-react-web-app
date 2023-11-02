@@ -1,13 +1,16 @@
 import ModuleList from "../Modules/ModuleList";
-import Status from "./Status";
+import React from "react";
+import { Status } from "../Status";
+
 
 function Home() {
   return (
     <div className="row">
-      <div className="col">
+      <div className="col-10">
+        <h2>Home</h2>
         <ModuleList />
       </div>
-      <div className="col-md-auto">
+      <div className="col-2">
         <Status />
       </div>
     </div>

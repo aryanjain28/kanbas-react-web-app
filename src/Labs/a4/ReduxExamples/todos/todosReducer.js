@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 const initialState = {
   todos: [
     { id: "1", title: "Learn React" },
@@ -7,14 +6,13 @@ const initialState = {
   ],
   todo: { title: "Learn Mongo" },
 };
-
 const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
     addTodo: (state, action) => {
       const newTodos = [
-        ...state.todos,
+          ...state.todos,
         { ...action.payload, id: new Date().getTime().toString() },
       ];
       state.todos = newTodos;
@@ -36,6 +34,5 @@ const todosSlice = createSlice({
     },
   },
 });
-
 export const { addTodo, deleteTodo, updateTodo, setTodo } = todosSlice.actions;
 export default todosSlice.reducer;

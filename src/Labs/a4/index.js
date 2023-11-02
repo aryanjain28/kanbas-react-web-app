@@ -1,42 +1,45 @@
 import React from "react";
 import Add from "./Add";
-import ArrayStateVariable from "./ArrayStateVariable";
-import BooleanStateVariables from "./BooleanStateVariables";
 import ClickEvent from "./ClickEvent";
-import Counter from "./Counter";
-import DateStateVariable from "./DateStateVariables";
-import EventObject from "./EventObject";
-import ObjectStateVariable from "./ObjectStateVariable";
-import ParentStateComponent from "./ParentStateComponent";
 import PassingDataOnEvent from "./PassingDataOnEvent";
 import PassingFunctions from "./PassingFunctions";
-import ReduxExamples from "./ReduxExamples";
+import EventObject from "./EventObject";
+import Counter from "./Counter";
+import BooleanStateVariables from "./BooleanStateVariables";
 import StringStateVariables from "./StringStateVariables";
+import DateStateVariable from "./DateStateVariable";
+import ObjectStateVariable from "./ObjectStateVariable";
+import ArrayStateVariable from "./ArrayStateVariable";
+import ParentStateComponent from "./ParentStateComponent";
+import ChildStateComponent from "./ChildStateComponent";
+import ReduxExamples from "./ReduxExamples";
 
-const Assignment4 = () => {
+export function Assignment4() {
   function sayHello() {
     alert("Hello");
   }
 
   return (
-    <>
-      <h1>Labs</h1>
-      <h1>Assignment 4</h1>
+    <div>
+      <div>
+        <h1>Assignment 4</h1>
+        <ReduxExamples />
 
-      <Add a={1} b={2} />
-      <ClickEvent />
-      <PassingDataOnEvent />
-      <PassingFunctions theFunction={sayHello} />
-      <EventObject />
-      <Counter />
-      <BooleanStateVariables />
-      <StringStateVariables />
-      <DateStateVariable />
-      <ObjectStateVariable />
-      <ArrayStateVariable />
-      <ParentStateComponent />
-      <ReduxExamples />
-    </>
-  );
-};
-export default Assignment4;
+        <PassingFunctions theFunction={sayHello} />
+        <Add a={1} b={2} />
+        <ClickEvent />
+        <PassingDataOnEvent />
+        <EventObject />
+        <Counter />
+        <BooleanStateVariables />
+        <StringStateVariables />
+        <DateStateVariable />
+        <ObjectStateVariable />
+        <ArrayStateVariable />
+        <ParentStateComponent />
+
+
+      </div>
+    </div>
+  )
+}

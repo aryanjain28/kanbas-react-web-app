@@ -1,79 +1,96 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { LuGripVertical, LuMoreVertical } from 'react-icons/lu';
-import { AiFillCheckCircle, AiOutlinePlus } from 'react-icons/ai';
-import { FaRegPenToSquare } from 'react-icons/fa6';
+import React, { useState } from "react";
+import { Link, Navigate, useParams } from "react-router-dom";
 import db from "../../Database";
+import "bootstrap/dist/css/bootstrap.min.css"
+import { BsPlusLg } from "react-icons/bs";
+import { useSelector, useDispatch } from "react-redux";
+import { selectAssignment, initialState, deleteAssignment } from "./assignmentsReducer";
+import ConfirmationDialog from './ConfirmationDialog'
+
+
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignments = db.assignments;
+  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  const dispatch = useDispatch();
+
   const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId,
-  );
+    (assignment) => assignment.course === courseId);
+
+  const [showConfirmation, setShowConfirmation] = useState(new Array(courseAssignments.length).fill(false));
+
+  const handleDeleteClick = (index) => {
+    const newConfirmationStates = [...showConfirmation];
+    newConfirmationStates[index] = true;
+    setShowConfirmation(newConfirmationStates);
+  };
+
+  const handleConfirmDelete = () => {
+    dispatch(deleteAssignment(assignment._id));
+    setShowConfirmation(new Array(courseAssignments.length).fill(false));
+  };
+
+  const handleCancelDelete = () => {
+    // Cancel the deletion and close the confirmation dialog
+    setShowConfirmation(new Array(courseAssignments.length).fill(false));
+  };
 
   return (
     <div>
-      <div className="d-flex flex-wrap align-items-center">
-      <div className="flex-grow-1">
-        <input className="form-control w-25 d-inline m-0" type="text" placeholder="Search for Assignment" aria-label="default input example" />
-      </div>
-      <div className="float-end m-0">
-        <button type="menuButton" className="m-1 btn btn-light btn-outline-secondary" style={{color:'#000000'}}>
-          Group
-        </button>
-        <button type="menuButton" className="m-1 btn btn-danger">
-          Module
-        </button>
-      </div>
-      </div>
-      <hr className="mt-2 mb-4 me-2" />
-      <ul className="list-group" style={{ borderRadius:0, fontSize:16+'px' }}>
-      <li className="list-group-item p-0 pb-5" style={{border:0}}>
-        <div className="d-flex align-items-center ps-3" style={{ height:50+'px', border:"0.5px solid #CBCCCB", backgroundColor:'#D3D3D3' }}>
-          <LuGripVertical style={{ fontSize:1+'em', color:'#000000', marginLeft:5+'px' }} />
-          <p className="flex-grow-1" style={{ fontWeight:600, margin:0, paddingLeft:5+'px' }}>ASSIGNMENTS</p>
-          <div className="me-2">
-            <span className="m-0 me-3 p-2 bg-light rounded" style={{ color:'#000000', fontWeight:'normal' }}>
-              40% of total
-            </span>
-            <AiOutlinePlus style={{ color:'#000000', fontSize:1+'em', marginRight:5+'px' }} />
-            <LuMoreVertical style={{ color:'#000000', fontSize:1+'em' }} />
-          </div>
+      <div class="d-flex flex-row">
+        <div class="flex-grow-1 w-25">
+          <input type="text" placeholder="Search for Assignments" className="form-control w-50" />
         </div>
-        <ul className="list-group" style={{ borderRadius:0, fontSize:16+'px' }}>
-          {courseAssignments.map((assignment, index) => {
-            return (
-            <li key={index} className="list-group-item p-0" style={{ border:"0.5px solid #CBCCCB", borderTop:0, borderLeft:'5px solid green' }} >
-              <div className="d-flex align-items-center ps-3" style={{ }}>
-                <LuGripVertical style={{ fontSize:1+'em', color:'#000000' }} />
-                <FaRegPenToSquare style={{ color:'green', fontSize:1+'em', marginLeft:10+'px' }} />
-                <div className="w-100 d-flex" style={{ marginLeft: 5+'px' }}>
-                  <p className="flex-grow-1" style={{ fontWeight:300, margin:0, fontSize:12+'px' }}>
-                    <Link
-                      key={assignment._id}
-                      to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                      className="list-group-item"
-                      style={{ textDecoration:'none', border:0 }}
-                    >
-                      <strong style={{ fontWeight:500, fontSize:16+'px' }}>{assignment.title}</strong>
-                    
-                      <br />
-                      <strong style={{ fontWeight:500 }}>Due</strong> {assignment.due} | {assignment.points} pts
-                    </Link>
-                  </p>
-                  <div className="me-2 align-self-center">
-                    <AiFillCheckCircle style={{ color:'green', fontSize:1+'em', marginRight:5+'px' }} />
-                    <LuMoreVertical style={{ color:'#000000', fontSize:1+'em' }} />
-                  </div>
-                </div>
-              </div>
-            </li>
-            )
-          })}
-        </ul>
-      </li>
-    </ul>
+        <button class="btn btn-secondary float-end" style={{ background: "grey" }}>
+          <BsPlusLg />
+          Group</button>
+        <Link
+          class="btn btn-danger float-end"
+          style={{ background: "red", color: "white" }}
+          to={`/Kanbas/Courses/${courseId}/Assignments/New`}
+          onClick={() => { dispatch(selectAssignment({ ...initialState.assignment, course: courseId })) }}>
+          <BsPlusLg />
+          Assignment
+        </Link>
+        <select class="btn btn-secondary float-end">
+          <option selected value="EAD">
+            Edit Assignment Dates</option>
+        </select>
+      </div>
+
+      <hr />
+
+      <ul className="list-group" style={{ background: "#e2e3e5", marginTop: "30px" }}>
+        <h2>Assignments for course {courseId}</h2>
+        <div>
+          {courseAssignments.map((assignment, index) => (
+            <div>
+              <Link
+                key={assignment._id}
+                to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                className="list-group-item"
+                onClick={() => dispatch(selectAssignment(assignment))}>
+                {assignment.name}
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  handleDeleteClick(index);
+                }}
+                  className='btn btn-danger'>
+                  Delete
+                </button>
+              </Link>
+              <div>{assignment.description}</div>
+
+              <ConfirmationDialog
+                isOpen={showConfirmation[index]}
+                onConfirm={handleConfirmDelete}
+                onCancel={handleCancelDelete}
+              />
+            </div>
+          ))}
+        </div>
+      </ul>
     </div>
   );
 }

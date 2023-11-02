@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
-
+import { useSelector } from "react-redux";
 function TodoList() {
   const { todos } = useSelector((state) => state.todosReducer);
-
   return (
     <div>
       <h2>Todo List</h2>
@@ -18,5 +16,4 @@ function TodoList() {
     </div>
   );
 }
-
 export default TodoList;

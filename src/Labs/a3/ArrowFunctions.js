@@ -1,18 +1,18 @@
-function ArrowFunctions() {
-    const subtract = (a, b) => {
-        return a - b;
-    }
+import React from "react";
 
-    const threeMinusOne = subtract(3, 1);
-    console.log(threeMinusOne);
+export function ArrowFunctions() {
+  const subtract = (a, b) => {
+    return a - b;
+  }
+  const threeMinusOne = subtract(3, 1);
+  console.log(threeMinusOne);
 
-    return (
+  return (
     <>
-        <h3>New ES6 arrow functions</h3>
-        threeMinusOne = {threeMinusOne}<br />
-        subtract(3, 1) = {subtract(3, 1)}<br />
+      <h3>New ES6 arrow functions</h3>
+      threeMinusOne = {threeMinusOne}<br />
+      subtract(3, 1) = {subtract(3, 1)}<br />
     </>
-    )
-}
+  )
 
-export default ArrowFunctions;
+}
