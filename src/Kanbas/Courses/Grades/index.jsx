@@ -1,82 +1,229 @@
-import db from "../../Database";
 import { useParams } from "react-router-dom";
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css"
+import { BsFillGearFill as SettingsIcon } from "react-icons/bs";
+import {
+  FaFilter as FunnelIcon,
+  FaFileExport as ExportIcon,
+  FaCheck as TickIcon,
+} from "react-icons/fa";
 
-function Grades() {
+// import "./index.css";
+import database from "../../Database";
+
+const Grades = () => {
   const { courseId } = useParams();
-  const assignments = db.assignments.filter((assignment) => assignment.course === courseId);
-  const enrollments = db.enrollments.filter((enrollment) => enrollment.course === courseId);
+  const assignments = database.assignments.filter(
+    (assignment) => assignment.course === courseId
+  );
+  const enrollments = database.enrollments.filter(
+    (enrollment) => enrollment.course === courseId
+  );
+
   return (
-    <div>
-      <div>
-        <select>
-          <option selected value="GB">
-            Gradebook</option>
-        </select>
-        <div class="d-flex flex-column">
-          <div>
-            <div class="float-end">
-              <div class="d-flex flex-row">
-                <button class="btn btn-secondary float-end" style={{ marginRight: "10px" }}><i
-                  class="fa-solid fa-file-import"></i>Import</button>
+    <div className="w-100">
+      {/* <!-- <select id="select_gradeBook">
+            <option selected value="gradebook">Gradebook</option>
+            <option value="somthing_else">Something Else</option>
+            <option value="some_string">Some String</option>
+          </select> --> */}
 
-                <div class="dropdown" style={{ marginRight: "10px" }}>
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="fa-solid fa-file-export"></i>
-                    Export
-                  </button>
-                </div>
-                <button class="btn btn-secondary"><i class="fa-solid fa-gear"></i></button>
-              </div>
-            </div>
-          </div>
+      <div class="d-flex align-items-center justify-content-end gap-2">
+        <button class="btn btn-outline-dark bg-light" type="button">
+          <TickIcon className="text-success mx-2" />
+          Import
+        </button>
+
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-dark border-1 bg-light dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+          >
+            <ExportIcon className="text-muted mx-2" />
+            Export
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#">
+                  Import
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  Do Something
+                </a>
+              </li>
+            </ul>
+          </button>
         </div>
 
-        <div>
-          <div class="row">
-            <b class="col">Student Names</b>
-            <b class="col">Assignment Names</b>
-          </div>
-          <div class="row">
-            <div class="col">
-              <input type="text" placeholder="Search Students" id="student-name" />
-            </div>
-            <div class="col">
-              <input type="text" placeholder="Search Assignments" id="assignment-name" />
-            </div>
-          </div>
+        <button class="btn btn-outline-dark bg-light" type="button">
+          <SettingsIcon className="m-1" />
+        </button>
+      </div>
+
+      <hr />
+
+      <div class="row d-flex align-items-center justify-content-between">
+        <div class="col">
+          <h2 class="h6">Student Names</h2>
+          <input
+            class="form-control"
+            id="student_search_input"
+            placeholder="Search Students"
+          />
         </div>
 
-        <div style={{ margin: "10px 0px 10px 0px" }}>
-          <button class="btn btn-secondary">Apply Filters</button>
-        </div>
-
-
-        <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <th>Student Name</th>
-              {assignments.map((assignment) => (<th>{assignment.title}</th>))}
-            </thead>
-            <tbody>
-              {enrollments.map((enrollment) => {
-                const user = db.users.find((user) => user._id === enrollment.user);
-                return (
-                  <tr>
-                    <td>{user.firstName} {user.lastName}</td>
-                    {assignments.map((assignment) => {
-                      const grade = db.grades.find(
-                        (grade) => grade.student === enrollment.user && grade.assignment === assignment._id);
-                      return (<td>{grade?.grade || ""}</td>);
-                    })}
-                  </tr>);
-              })}
-            </tbody></table>
+        <div class="col">
+          <h2 class="h6">Assignment Names</h2>
+          <input
+            class="form-control"
+            id="assignments_search_input"
+            placeholder="Search Assignments"
+          />
         </div>
       </div>
-    </div >
+
+      <button
+        class="btn bg-light p-2 my-2 btn-lg btn-outline-dark"
+        type="button"
+      >
+        <FunnelIcon className="text-muted mx-2" />
+        Apply Filters
+      </button>
+
+      <table class="table table-striped border" style={{ borderRadius: 5 }}>
+        <thead style={{ verticalAlign: "middle" }}>
+          <th className="py-3">Student Name</th>
+          {assignments.map((assignment) => (
+            <th className="py-3">
+              {assignment.title}
+              <br />
+              Out of 100
+            </th>
+          ))}
+        </thead>
+
+        <tbody>
+          {enrollments.map((enrollment) => {
+            const user = database.users.find(
+              (user) => user._id === enrollment.user
+            );
+            return (
+              <tr>
+                <td class="text-danger">
+                  {user.firstName} {user.lastName}
+                </td>
+                {assignments.map((assignment) => {
+                  const grade = database.grades.find(
+                    (grade) =>
+                      grade.student === enrollment.user &&
+                      grade.assignment === assignment._id
+                  );
+                  return (
+                    <td>
+                      {Math.random() > 0.5 ? (
+                        <input
+                          style={{ maxWidth: 100, textAlign: "center" }}
+                          class="form-control"
+                          placeholder="100"
+                          value={grade?.grade || "-"}
+                        />
+                      ) : (
+                        grade?.grade || ""
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+
+          {/* <tr>
+            <td class="text-danger">Captain America</td>
+            <td>
+
+            </td>
+            <td>41</td>
+            <td>93</td>
+            <td>34</td>
+            <td>24</td>
+            <td>53</td>
+            <td>43</td>
+          </tr>
+
+          <tr>
+            <td class="text-danger">Ironman</td>
+            <td>10</td>
+            <td>
+              <input
+                class="form-control"
+                placeholder="100"
+                size="5"
+                value="100"
+              />
+            </td>
+            <td>23</td>
+            <td>34</td>
+            <td>34</td>
+            <td>88</td>
+            <td>14</td>
+          </tr>
+
+          <tr>
+            <td class="text-danger">Black Widow</td>
+            <td>2</td>
+            <td>53</td>
+            <td>
+              <input
+                class="form-control"
+                placeholder="100"
+                size="5"
+                value="100"
+              />
+            </td>
+            <td>53</td>
+            <td>11</td>
+            <td>42</td>
+            <td>72</td>
+          </tr>
+
+          <tr>
+            <td class="text-danger">Hulk</td>
+            <td>34</td>
+            <td>24</td>
+            <td>63</td>
+            <td>
+              <input
+                class="form-control"
+                placeholder="100"
+                size="5"
+                value="100"
+              />
+            </td>
+            <td>42</td>
+            <td>88</td>
+            <td>92</td>
+          </tr>
+
+          <tr>
+            <td class="text-danger">Black Panther</td>
+            <td>61</td>
+            <td>53</td>
+            <td>5</td>
+            <td>34</td>
+            <td>
+              <input
+                class="form-control"
+                placeholder="100"
+                size="5"
+                value="100"
+              />
+            </td>
+            <td>23</td>
+            <td>53</td>
+          </tr> */}
+        </tbody>
+      </table>
+    </div>
   );
-}
+};
 export default Grades;

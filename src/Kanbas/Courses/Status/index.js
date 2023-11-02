@@ -1,28 +1,81 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css"
+import {
+  FaBan as BanIcon,
+  FaCheck as TickIcon,
+  FaFileImport as ImportIcon,
+  FaArrowCircleRight as RightIcon,
+  FaBullseye as BullsEyeIcon,
+  FaChartLine as ChartIcon,
+  FaBullhorn as BullHornIcon,
+  FaBell as BellIcon,
+} from "react-icons/fa";
 
+const BUTTONS = [
+  { label: "Import Existing Content", icon: <ImportIcon /> },
+  { label: "Import From Commons", icon: <RightIcon /> },
+  { label: "Choose Home Page", icon: <BullsEyeIcon /> },
+  { label: "View Course Stream", icon: <ChartIcon /> },
+  { label: "New Announcement", icon: <BullHornIcon /> },
+  { label: "New Analytics", icon: <ChartIcon /> },
+  { label: "View Course Notifications", icon: <BellIcon /> },
+];
 
-export function Status() {
+const Status = () => {
   return (
-    <div>
-      <h2>Status</h2>
-      <ul className="list-group">
-        <li className="list-group-item"><a href="#">Importing Existing Content</a></li>
-        <li className="list-group-item"><a href="#">Importing From Commons</a></li>
-        <li className="list-group-item"><a href="#">Choose Home Page</a></li>
-        <li className="list-group-item"><a href="#">View Course Stream</a></li>
-        <li className="list-group-item"><a href="#">New Announcement</a></li>
-        <li className="list-group-item"><a href="#">New Analytics</a></li>
-        <li className="list-group-item"><a href="#">View Course Notifications</a></li>
-      </ul>
+    <>
+      <div class="d-flex align-items-center justify-content-between">
+        <button
+          type="button"
+          class="btn mx-1 w-50 btn-secondary d-flex align-items-center justify-content-center gap-2"
+        >
+          <BanIcon />
+          Unpublish
+        </button>
+        <button
+          type="button"
+          class="btn mx-1 w-50 btn-success d-flex align-items-center justify-content-center gap-2"
+        >
+          <TickIcon />
+          Published
+        </button>
+      </div>
+      <div>
+        <ul class="list-group my-3 gap-2 list-group-flush d-flex align-items-center justify-content-start">
+          {BUTTONS.map(({ label, icon }, index) => (
+            <li
+              class="list-group-item bg-light border-0 w-100"
+              key={index}
+              style={{ height: 40 }}
+            >
+              {icon}
+              <a
+                style={{ textDecoration: "none" }}
+                href="/"
+                class="text-dark mx-2"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-      <h2>Todo</h2>
-      <a href="#">View Calendar</a>
-      <ul className="list-group">
-        <li className="list-group-item"><a href="#">Lecture 4550</a></li>
-        <li className="list-group-item"><a href="#">Lecture 4556</a></li>
-        <li className="list-group-item"><a href="#">CS5610</a></li>
-      </ul>
-    </div>
-  )
-}
+      <br />
+      <br />
+      <br />
+
+      <h6>To Do</h6>
+      <hr class="p-0" />
+      <div class="card border-0">
+        <div class="card-body p-0">
+          <h5 class="card-title text-danger">
+            <i class="text-danger fa-1 fa-solid fa-xs"></i>
+            Grade A1 - ENV + HTML
+          </h5>
+          <p class="card-text">100 points | Sep 19 at 11:59pm</p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Status;

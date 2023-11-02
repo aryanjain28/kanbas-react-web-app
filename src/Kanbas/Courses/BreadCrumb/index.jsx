@@ -1,28 +1,55 @@
-import React from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
-import db from "../../Database";
-import "bootstrap/dist/css/bootstrap.min.css"
-import "./index.css"
+import { Link, useLocation } from "react-router-dom";
+import "./index.css";
 
-export function BreadCrumb() {
-  const links = ["Home", "Modules", "Piazza", "Zoom Meetings", "Assignments", "Grades"];
+export const Breadcrumb = () => {
   const { pathname } = useLocation();
-  const { courseId } = useParams();
 
-  const course = db.courses.find((course) => course._id === courseId);
+  const breadcrumbs = pathname.split("/");
+  breadcrumbs.shift();
+  breadcrumbs.shift();
+  breadcrumbs.shift();
+  const breadcrumblinks = [];
 
+  var tempLink = "";
+  for (let i = 0; i < breadcrumbs.length; i++) {
+    tempLink += "/" + breadcrumbs[i];
+    breadcrumblinks.push(tempLink);
+  }
 
   return (
-    <nav aria-label="breadcrumb">
-      <div className="breadcrumb">
-        <Link className="breadcrumb-item" to={`/Kanbas/Courses/${courseId}/Home`} style={{ color: "red", textDecoration: "none" }}>Courses {course.name}</Link>
-        {links.map((link) => (
-          pathname.includes(link) ? (
-            <div key={link} className={"breadcrumb-item active"} aria-current="page">{link}</div>
-          ) : null
-        ))}
-      </div>
-    </nav>
+    <div class="d-flex align-items-center justify-content-start m-3">
+      <i class="fa-solid fa-bars fa-2x text-danger"></i>
+      <nav>
+        <ol class="breadcrumb m-0">
+          {breadcrumbs.map((link, index) => (
+            <li class={`breadcrumb-item `}>
+              <Link
+                key={index}
+                to={`/Kanbas/Courses${breadcrumblinks[index]}`}
+                className={` ${
+                  index === breadcrumbs.length - 1 ? "text-dark" : "text-danger"
+                } `}
+                style={{ textDecoration: "none" }}
+              >
+                {link}
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </nav>
 
-  )
-}
+      {/* <button
+          class="btn btn-light p-2 px-3 gap-2 mx-2"
+          id="edit_profile"
+          type="button"
+          style={{
+            border: "1px lightgray solid",
+            borderRadius: "2px",
+          }}
+        >
+          <i style={{ color: "gray" }} class="fa-solid fa-glasses mx-3"></i>
+          Student View
+        </button> */}
+    </div>
+  );
+};

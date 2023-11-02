@@ -6,39 +6,29 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades/index";
-import { BreadCrumb } from "./BreadCrumb/index";
+import { Breadcrumb } from "./BreadCrumb";
 
 function Courses({ courses }) {
   return (
-    <div className="d-flex flex-column">
-      <div style={{ width: "100%" }}>
-        <BreadCrumb />
-        <hr />
-      </div>
+    <div className="d-flex flex-column w-100">
+      <Breadcrumb />
+      <hr />
 
-      <div>
+      <div className="d-flex">
         <CourseNavigation />
-        <div>
-          <div
-            className="overflow-y-scroll position-fixed bottom-0 end-0"
-            style={{
-              left: "320px",
-              top: "50px",
-            }}
-          >
-            <Routes>
-              <Route path="/" element={<Navigate to="Home" />} />
-              <Route path="Home" element={<Home />} />
-              <Route path="Modules" element={<Modules />} />
-              <Route path="Assignments" element={<Assignments />} />
-              <Route
-                path="Assignments/:assignmentId"
-                element={<AssignmentEditor />}
-              />
-              <Route path="Assignments/New" element={<AssignmentEditor />} />
-              <Route path="Grades" element={<Grades />} />
-            </Routes>
-          </div>
+        <div className="overflow-y-scroll m-3 w-100">
+          <Routes>
+            <Route path="/" element={<Navigate to="Home" />} />
+            <Route path="Home" element={<Home />} />
+            <Route path="Modules" element={<Modules />} />
+            <Route path="Assignments" element={<Assignments />} />
+            <Route
+              path="Assignments/:assignmentId"
+              element={<AssignmentEditor />}
+            />
+            <Route path="Assignments/New" element={<AssignmentEditor />} />
+            <Route path="Grades" element={<Grades />} />
+          </Routes>
         </div>
       </div>
     </div>

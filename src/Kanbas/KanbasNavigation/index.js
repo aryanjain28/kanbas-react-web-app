@@ -1,42 +1,109 @@
 import { Link, useLocation } from "react-router-dom";
-import { BiUserCircle } from "react-icons/bi";
+
 import { RiDashboard3Fill } from "react-icons/ri";
-import { FaBook } from "react-icons/fa";
-import { BsFillCalendar2WeekFill } from "react-icons/bs";
+import {
+  FaUser as UserIcon,
+  FaBook as BookIcon,
+  FaCalendar as CalendarIcon,
+  FaInbox as InboxIcon,
+  FaHistory,
+  FaCameraRetro,
+  FaShareSquare,
+  FaQuestionCircle,
+} from "react-icons/fa";
+
+import NU_LOGO from "../../assets/images/NU_LOGO.png";
+
+// CSS
 import "./index.css";
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
-function KanbasNavigation() {
-  const links = ["Account", "Dashboard", "Courses", "Calendar"];
+// Constants
+const _ICONS = [
+  {
+    id: 1,
+    name: "universityLogo",
+    label: "",
+    icon: <img alt="logo" className="w-100" src={NU_LOGO} />,
+  },
+  {
+    id: 2,
+    name: "account",
+    label: "Account",
+    icon: <UserIcon className="wd-icon wd-user-icon" />,
+  },
+  {
+    id: 3,
+    name: "dashboard",
+    label: "Dashboard",
+    icon: <RiDashboard3Fill className="wd-icon" />,
+  },
+  {
+    id: 4,
+    name: "courses",
+    label: "Courses",
+    icon: <BookIcon className="wd-icon" />,
+  },
+  {
+    id: 5,
+    name: "calendar",
+    label: "Calendar",
+    icon: <CalendarIcon className="wd-icon" />,
+  },
+  {
+    id: 6,
+    name: "inbox",
+    label: "Inbox",
+    icon: <InboxIcon className="wd-icon" />,
+  },
+  {
+    id: 7,
+    name: "history",
+    label: "History",
+    icon: <FaHistory className="wd-icon" />,
+  },
+  {
+    id: 8,
+    name: "studio",
+    label: "Studio",
+    icon: <FaCameraRetro className="wd-icon" />,
+  },
+  {
+    id: 9,
+    name: "commons",
+    label: "Commons",
+    icon: <FaShareSquare className="wd-icon" />,
+  },
+  {
+    id: 10,
+    name: "help",
+    label: "Help",
+    icon: <FaQuestionCircle className="wd-icon" />,
+  },
+];
 
-  const linkToIconMap = {
-    Account: <BiUserCircle className="wd-icon" />,
-    Dashboard: <RiDashboard3Fill className="wd-icon" />,
-    Courses: <FaBook className="wd-icon" />,
-    Calendar: <BsFillCalendar2WeekFill className="wd-icon" />,
-  };
-
+const KanbasNavigation = () => {
   const { pathname } = useLocation();
+
   return (
-    <div>
-      <div
-        className="list-group wd-kanbas-navigation"
-        style={{ width: 100, height: "100%" }}
-      >
-        {links.map((link, index) => (
-          <Link
-            key={index}
-            to={`/Kanbas/${link}`}
-            className={`list-group-item ${pathname.includes(link) && "active"}`}
-          >
-            {linkToIconMap[link]}
-            <br />
-            {link}
-          </Link>
-        ))}
-      </div>
+    <div
+      className="list-group wd-kanbas-navigation h-100"
+      style={{ width: 250 }}
+    >
+      {_ICONS.map(({ id, name, label, icon }) => (
+        <Link
+          key={id}
+          to={id === 1 ? "/" : `/Kanbas/${label}`}
+          className={`list-group-item ${
+            pathname.includes(label) ? "active" : ""
+          }`}
+          style={id === 1 ? { background: "black" } : {}}
+        >
+          {icon}
+          <br />
+          {label}
+        </Link>
+      ))}
     </div>
   );
-}
+};
 export default KanbasNavigation;

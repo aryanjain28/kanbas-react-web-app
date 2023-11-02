@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function ConfirmationDialog({ isOpen, onConfirm, onCancel }) {
   if (!isOpen) {
@@ -9,8 +9,12 @@ function ConfirmationDialog({ isOpen, onConfirm, onCancel }) {
     <div>
       <div>
         <p>Are you sure you want to remove the assignment?</p>
-        <button onClick={onConfirm} className='btn btn-danger'>Yes</button>
-        <button onClick={onCancel} className='btn btn-primary'>No</button>
+        <button onClick={onConfirm} className="btn btn-danger">
+          Yes
+        </button>
+        <button onClick={onCancel} className="btn btn-primary">
+          No
+        </button>
       </div>
     </div>
   );
