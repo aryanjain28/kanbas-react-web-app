@@ -1,46 +1,27 @@
 import KanbasNavigation from "./KanbasNavigation";
-import { Routes, Route, Navigate } from "react-router";
-import { useLocation } from "react-router-dom";
-import Courses from "./Courses";
-import Account from "./Account";
-import AccountEdit from "./Account/Edit";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
-import MainPage from "../Assignment";
-import Lab from "../Labs/a3/index";
+import Courses from "./Courses";
 
-const Kanbas = () => {
-  const { pathname } = useLocation();
-
-  const hideNavigation = pathname.includes("Labs") || pathname === "/";
-
+function Kanbas() {
   return (
-    <div className="d-flex h-100 w-100">
-      {!hideNavigation && <KanbasNavigation />}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="w-100 p-5">
-              <MainPage />
-            </div>
-          }
-        />
-        <Route path="Kanbas/Labs" element={<Lab />} />
-
-        <Route path="Kanbas/Account" element={<Account />} />
-        <Route path="Kanbas/Account/Edit" element={<AccountEdit />} />
-
-        <Route path="Kanbas/Dashboard" element={<Dashboard />} />
-        <Route path="Kanbas" element={<Navigate to="Kanbas/Dashboard" />} />
-        <Route
-          path="Kanbas/Courses"
-          element={<Navigate to="/Kanbas/Dashboard" />}
-        />
-        <Route path="Kanbas/Courses/:courseId/*" element={<Courses />} />
-        <Route path="Kanbas/Calendar" element={<h1>Calendar</h1>} />
-        <Route path="Kanbas/" element={<Navigate to="Kanbas/Dashboard" />} />
-      </Routes>
+    <div className="d-flex w-100 h-100">
+      <KanbasNavigation />
+      <div className="d-flex flex-grow-1 h-100">
+        <Routes>
+          <Route path="/" element={<Navigate to="Dashboard" />} />
+          <Route path="Account" element={<h1>Account</h1>} />
+          <Route path="Dashboard" element={<Dashboard />} />
+          <Route path="Courses/:courseId/*" element={<Courses />} />
+          <Route path="Calendar" element={<h1>Calendar</h1>} />
+          <Route path="Inbox" element={<h1>Inbox</h1>} />
+          <Route path="History" element={<h1>History</h1>} />
+          <Route path="Studio" element={<h1>Studio</h1>} />
+          <Route path="Commons" element={<h1>Commons</h1>} />
+          <Route path="Help" element={<h1>Help</h1>} />
+        </Routes>
+      </div>
     </div>
   );
-};
+}
 export default Kanbas;

@@ -1,41 +1,37 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-
-import CourseNavigation from "../Courses/CourseNavigation";
+import CourseNavigation from "./CourseNavigation";
+import CourseHeader from "./CourseHeader";
 import Modules from "./Modules";
+import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
-import Home from "./Home";
 import Grades from "./Grades";
-import Breadcrumb from "./Breadcrumb";
-import Settings from "./Settings";
-import "./index.css";
-import ModuleList from "./Modules/ModuleList";
 
-const Courses = () => {
+function Courses() {
   return (
     <div className="w-100">
-      <Breadcrumb />
-      <hr />
-
-      <div className="d-flex">
-        <CourseNavigation />
-
-        <Routes>
-          <Route path="/" element={<Navigate to="Home" />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="Modules" element={<Modules />} />
-          <Route path="Assignments" element={<Assignments />} />
-          <Route
-            path="Assignments/:assignmentId"
-            element={<AssignmentEditor />}
-          />
-
-          <Route path="Grades" element={<Grades />} />
-          <Route path="Settings/*" element={<Settings />} />
-        </Routes>
+      <CourseHeader />
+      <hr class="mx-3" />
+      <CourseNavigation />
+      <div>
+        <div
+          className="overflow-y-scroll position-fixed bottom-0 end-0 pe-3"
+          style={{ left: "260px", top: "90px" }}
+        >
+          <Routes>
+            <Route path="/" element={<Navigate to="Home" />} />
+            <Route path="Home" element={<Home />} />
+            <Route path="Modules" element={<Modules />} />
+            <Route path="Assignments" element={<Assignments />} />
+            <Route
+              path="Assignments/:assignmentId"
+              element={<AssignmentEditor />}
+            />
+            <Route path="Grades" element={<Grades />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );
-};
-
+}
 export default Courses;

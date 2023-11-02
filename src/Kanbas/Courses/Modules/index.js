@@ -1,11 +1,11 @@
 import ModuleList from "./ModuleList";
+import "./index.css";
 
-const Modules = () => {
+function Modules() {
   return (
-    <div className="w-100 mx-5">
+    <div>
       <ModuleList />
     </div>
   );
-};
-
+}
 export default Modules;

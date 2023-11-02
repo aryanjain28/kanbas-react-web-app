@@ -1,72 +1,66 @@
 import { Link } from "react-router-dom";
-import database from "../Database";
-
-import "./index.css";
-
-const getRandomColor = () => {
-  const index = Math.floor(Math.random() * 8);
-  return [
-    "primary",
-    "secondary",
-    "success",
-    "danger",
-    "warning",
-    "info",
-    "light",
-  ][index];
-};
-
-const Dashboard = () => {
-  const courses = database.courses;
-
+import db from "../Database";
+function Dashboard() {
+  const courses = db.courses;
   return (
-    <div className="m-4 px-3 w-100">
-      <h1 className="display-4">Dashboard</h1>
-      <hr />
-
-      <div className="m-3 w-100">
-        <h4 className="h4">Published Courses ({courses.length})</h4>
-        <hr />
-
-        <div className="row align-items-center justify-content-start gap-5 m-2">
-          {courses.map((course) => {
-            const color = getRandomColor();
-            return (
+    <div className="py-2 mx-3">
+      <h4 className="py-2">Publised Courses ({courses.length})</h4>
+      <hr class="my-1" style={{ width: "auto" }} />
+      <div class="row flex-row flex-wrap row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+        {courses.map((course) => (
+          <div
+            class="d-flex flex-fill"
+            style={{
+              padding: 15 + "px",
+              minWidth: 300 + "px",
+              maxWidth: 300 + "px",
+            }}
+          >
+            <Link
+              key={course._id}
+              to={`/Kanbas/Courses/${course._id}`}
+              className="list-group-item"
+            >
               <div
-                className="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 card  shadow border-0 p-0"
-                style={{ width: "22rem" }}
+                class="card"
+                style={{
+                  width: 270 + "px",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                }}
               >
                 <div
-                  className={`card-header w-100 border-0 bg-${color}`}
-                  style={{ height: "12rem" }}
-                >
-                  <i className="m-1 fa-solid fa-ellipsis-vertical text-white fa-2x"></i>
-                </div>
-                <div className="card-body">
-                  <h5 className={`card-title text-truncate`}>
-                    <Link
-                      className={`text-${color}`}
-                      style={{ textDecoration: "none" }}
-                      to={`/Kanbas/Courses/${course._id}`}
-                    >
-                      {course.name}
-                    </Link>
+                  class="card-img-top"
+                  style={{ height: 150 + "px", backgroundColor: course.color }}
+                ></div>
+                <div class="card-body">
+                  <h5
+                    class="card-title"
+                    style={{
+                      overflowClipMargin: "padding-box",
+                      overflow: "overlay",
+                    }}
+                  >
+                    {course.number} <br/> {course.name}
                   </h5>
-                  <h4 className="card-title text-secondary text-truncate">
-                    CS4530.12361.202410
-                  </h4>
-                  <p className="card-text text-secondary text-truncate">
-                    CS 4550_01 Fall 2023 Web Development
+                  <p
+                    class="card-text"
+                    style={{
+                      overflowClipMargin: "padding-box",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {course.title}
+                    <br />
+                    {course.term}
                   </p>
-                  <i className="fa-solid fa-pen-to-square text-secondary"></i>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
-};
-
+}
 export default Dashboard;

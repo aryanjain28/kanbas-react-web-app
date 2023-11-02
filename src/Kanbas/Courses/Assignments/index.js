@@ -1,127 +1,80 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { LuGripVertical, LuMoreVertical } from 'react-icons/lu';
+import { AiFillCheckCircle, AiOutlinePlus } from 'react-icons/ai';
+import { FaRegPenToSquare } from 'react-icons/fa6';
 import db from "../../Database";
-import "./index.css";
-import {
-  FaCheckCircle as TickIcon,
-  FaPenSquare as EditIcon,
-  FaList as ListIcon,
-  FaCaretDown as DownIcon,
-  FaPlus as PlusIcon,
-  FaEllipsisV as OptionsIcon,
-} from "react-icons/fa";
 
-const ButtonGroup = () => {
-  return (
-    <div class="d-flex align-items-center justify-content-between">
-      <input
-        id="assignments_search_input"
-        placeholder="Search for Assignments"
-        class="form-control w-25"
-      />
-      <div className="d-flex gap-3">
-        <button
-          class="d-flex align-items-center justify-content-center  gap-2 btn btn-outline-dark bg-light"
-          type="button"
-        >
-          <PlusIcon />
-          Group
-        </button>
-        <button
-          class="d-flex align-items-center justify-content-center  gap-2 btn btn-danger"
-          type="button"
-        >
-          <PlusIcon />
-          Assignment
-        </button>
-        <button class="btn btn-outline-dark bg-light" type="button">
-          <OptionsIcon />
-        </button>
-      </div>
-    </div>
-  );
-};
-
-const Assignments = () => {
+function Assignments() {
   const { courseId } = useParams();
   const assignments = db.assignments;
   const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId
+    (assignment) => assignment.course === courseId,
   );
 
   return (
-    <div class="col mx-5 d-xs-none d-sm-none d-md-none d-lg-block d-xl-block">
-      <ButtonGroup />
-      <hr />
-
-      <div class="list-group list-group-flush ">
-        <div class="list-group list-group-item list-group-flush m-0 p-0">
-          <div class="row d-flex align-items-center justify-content-between m-0 p-0 py-3 bg-light">
-            <div class="col-2 h5 w-25">
-              <i class="fa-solid fa-list-ul mx-3 fa-lg"></i>
-              <DownIcon />
-              Assignments
-            </div>
-            <div class="col h5 d-flex w-100 align-items-center justify-content-end gap-4">
-              <div class="border p-2" style={{ borderRadius: 50 }}>
-                40% of Total
-              </div>
-              <PlusIcon />
-              <OptionsIcon />
-            </div>
+    <div>
+      <div className="d-flex flex-wrap align-items-center">
+      <div className="flex-grow-1">
+        <input className="form-control w-25 d-inline m-0" type="text" placeholder="Search for Assignment" aria-label="default input example" />
+      </div>
+      <div className="float-end m-0">
+        <button type="menuButton" className="m-1 btn btn-light btn-outline-secondary" style={{color:'#000000'}}>
+          Group
+        </button>
+        <button type="menuButton" className="m-1 btn btn-danger">
+          Module
+        </button>
+      </div>
+      </div>
+      <hr className="mt-2 mb-4 me-2" />
+      <ul className="list-group" style={{ borderRadius:0, fontSize:16+'px' }}>
+      <li className="list-group-item p-0 pb-5" style={{border:0}}>
+        <div className="d-flex align-items-center ps-3" style={{ height:50+'px', border:"0.5px solid #CBCCCB", backgroundColor:'#D3D3D3' }}>
+          <LuGripVertical style={{ fontSize:1+'em', color:'#000000', marginLeft:5+'px' }} />
+          <p className="flex-grow-1" style={{ fontWeight:600, margin:0, paddingLeft:5+'px' }}>ASSIGNMENTS</p>
+          <div className="me-2">
+            <span className="m-0 me-3 p-2 bg-light rounded" style={{ color:'#000000', fontWeight:'normal' }}>
+              40% of total
+            </span>
+            <AiOutlinePlus style={{ color:'#000000', fontSize:1+'em', marginRight:5+'px' }} />
+            <LuMoreVertical style={{ color:'#000000', fontSize:1+'em' }} />
           </div>
         </div>
-
-        {courseAssignments.map((courseAssignment) => {
-          return (
-            <div class="list-item py-0" key={courseAssignment._id}>
-              <div
-                class="card"
-                style={{
-                  borderTop: 0,
-                  borderBottom: 0,
-                  borderRight: 0,
-                  borderLeft: "5px green solid",
-                  borderRadius: 0,
-                }}
-              >
-                <div class="row d-flex align-items-center justify-content-start">
-                  <div class="col-1 d-flex mx-3 gap-3">
-                    <ListIcon fontSize={20} />
-                    <EditIcon fontSize={20} className="text-success" />
-                  </div>
-
-                  <div class="col">
-                    <div class="card-body">
-                      <Link
-                        class="card-title h5 text-dark"
-                        style={{ textDecoration: "none" }}
-                        to={`/Kanbas/Courses/${courseId}/Assignments/${courseAssignment._id}`}
-                      >
-                        {courseAssignment.title}
-                      </Link>
-
-                      <div class="card-text text-muted">
-                        Week 0 | Setup - Week Starting on Monday September 5th
-                        (9/5/2022) Module |
-                      </div>
-                      <div class="card-text text-muted">
-                        Due Sep 18, 2022 at 11:59pm | 100 pts
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-1 d-flex justify-content-between">
-                    <TickIcon fontSize={20} className="text-success" />
-                    <OptionsIcon />
+        <ul className="list-group" style={{ borderRadius:0, fontSize:16+'px' }}>
+          {courseAssignments.map((assignment, index) => {
+            return (
+            <li key={index} className="list-group-item p-0" style={{ border:"0.5px solid #CBCCCB", borderTop:0, borderLeft:'5px solid green' }} >
+              <div className="d-flex align-items-center ps-3" style={{ }}>
+                <LuGripVertical style={{ fontSize:1+'em', color:'#000000' }} />
+                <FaRegPenToSquare style={{ color:'green', fontSize:1+'em', marginLeft:10+'px' }} />
+                <div className="w-100 d-flex" style={{ marginLeft: 5+'px' }}>
+                  <p className="flex-grow-1" style={{ fontWeight:300, margin:0, fontSize:12+'px' }}>
+                    <Link
+                      key={assignment._id}
+                      to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                      className="list-group-item"
+                      style={{ textDecoration:'none', border:0 }}
+                    >
+                      <strong style={{ fontWeight:500, fontSize:16+'px' }}>{assignment.title}</strong>
+                    
+                      <br />
+                      <strong style={{ fontWeight:500 }}>Due</strong> {assignment.due} | {assignment.points} pts
+                    </Link>
+                  </p>
+                  <div className="me-2 align-self-center">
+                    <AiFillCheckCircle style={{ color:'green', fontSize:1+'em', marginRight:5+'px' }} />
+                    <LuMoreVertical style={{ color:'#000000', fontSize:1+'em' }} />
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            </li>
+            )
+          })}
+        </ul>
+      </li>
+    </ul>
     </div>
   );
-};
+}
 export default Assignments;

@@ -1,109 +1,117 @@
 import { Link, useLocation } from "react-router-dom";
+import { BiSolidUserCircle, BiTimeFive, BiHelpCircle } from "react-icons/bi";
+import { PiGaugeFill } from "react-icons/pi";
+import { FaBook } from "react-icons/fa";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
+import { BsFillInboxFill, BsDisplayFill, BsFillCalendarFill } from "react-icons/bs";
 
-import { RiDashboard3Fill } from "react-icons/ri";
-import {
-  FaUser as UserIcon,
-  FaBook as BookIcon,
-  FaCalendar as CalendarIcon,
-  FaInbox as InboxIcon,
-  FaHistory,
-  FaCameraRetro,
-  FaShareSquare,
-  FaQuestionCircle,
-} from "react-icons/fa";
+function KanbasNavigation() {
+  const Account = {
+    title: "Account",
+    icon: (styling) => {
+      return <BiSolidUserCircle style={{ ...styling, color: "#ABAAAA" }} />;
+    },
+  };
+  const Dashboard = {
+    title: "Dashboard",
+    icon: (styling) => {
+      return <PiGaugeFill style={{ ...styling }} />;
+    },
+  };
+  const Courses = {
+    title: "Courses",
+    icon: (styling) => {
+      return <FaBook style={{ ...styling }} />;
+    },
+  };
+  const Calendar = {
+    title: "Calendar",
+    icon: (styling) => {
+      return <BsFillCalendarFill style={{ ...styling }} />;
+    },
+  };
+  const Inbox = {
+    title: "Inbox",
+    icon: (styling) => {
+      return <BsFillInboxFill style={{ ...styling }} />;
+    }
+  }
+  const History = {
+    title: "History",
+    icon: (styling) => {
+      return <BiTimeFive style={{ ...styling }} />;
+    }
+  }
+  const Studio = {
+    title: "Studio",
+    icon: (styling) => {
+      return <BsDisplayFill style={{ ...styling }} />;
+    }
+  }
+  const Commons = {
+    title: "Commons",
+    icon: (styling) => {
+      return <FaArrowRightFromBracket style={{ ...styling }} />;
+    }
+  }
+  const Help = {
+    title: "Help",
+    icon: (styling) => {
+      return <BiHelpCircle style={{ ...styling }} />;
+    }
+  }
 
-import NU_LOGO from "../../assets/images/NU_LOGO.png";
+  const links = [Account, Dashboard, Courses, Calendar, Inbox, History, Studio, Commons, Help];
 
-// CSS
-import "./index.css";
-
-// Constants
-const _ICONS = [
-  {
-    id: 1,
-    name: "universityLogo",
-    label: "",
-    icon: <img alt="logo" className="w-100" src={NU_LOGO} />,
-  },
-  {
-    id: 2,
-    name: "account",
-    label: "Account",
-    icon: <UserIcon className="wd-icon wd-user-icon" />,
-  },
-  {
-    id: 3,
-    name: "dashboard",
-    label: "Dashboard",
-    icon: <RiDashboard3Fill className="wd-icon" />,
-  },
-  {
-    id: 4,
-    name: "courses",
-    label: "Courses",
-    icon: <BookIcon className="wd-icon" />,
-  },
-  {
-    id: 5,
-    name: "calendar",
-    label: "Calendar",
-    icon: <CalendarIcon className="wd-icon" />,
-  },
-  {
-    id: 6,
-    name: "inbox",
-    label: "Inbox",
-    icon: <InboxIcon className="wd-icon" />,
-  },
-  {
-    id: 7,
-    name: "history",
-    label: "History",
-    icon: <FaHistory className="wd-icon" />,
-  },
-  {
-    id: 8,
-    name: "studio",
-    label: "Studio",
-    icon: <FaCameraRetro className="wd-icon" />,
-  },
-  {
-    id: 9,
-    name: "commons",
-    label: "Commons",
-    icon: <FaShareSquare className="wd-icon" />,
-  },
-  {
-    id: 10,
-    name: "help",
-    label: "Help",
-    icon: <FaQuestionCircle className="wd-icon" />,
-  },
-];
-
-const KanbasNavigation = () => {
   const { pathname } = useLocation();
 
   return (
     <div
-      className="list-group wd-kanbas-navigation h-100"
-      style={{ width: 250 }}
+      className="list-group m-0 p-0"
+      style={{
+        width: 90,
+        backgroundColor: "#000000",
+        minHeight: 100 + "%",
+        borderRadius: 0,
+      }}
     >
-      {_ICONS.map(({ id, name, label, icon }) => (
-        <Link
-          key={id}
-          to={id === 1 ? "/" : `/Kanbas/${label}`}
-          className={`list-group-item ${
-            pathname.includes(label) ? "active" : ""
-          }`}
-          style={id === 1 ? { background: "black" } : {}}
-        >
-          {icon}
-          <br />
-          {label}
-        </Link>
-      ))}
+      <Link
+        key={0}
+        to={"/Kanbas/Dashboard"}
+        className={"list-group-item m-0 mb-2 p-2 border-0"}
+        style={{
+          display: "block",
+          overflow: "hidden",
+          height: 75 + "px",
+          backgroundImage: `url(${"/northeasternLogo.png"})`,
+          backgroundColor: "#000000",
+          backgroundPosition: 50 + "%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+        }}
+      ></Link>
+      {links.map((item, index) => {
+        const bgColor = pathname.includes(item.title) ? "#FFFFFF" : "#000000";
+        const textColor = pathname.includes(item.title) ? "#D41A2D" : "#FFFFFF";
+        return (
+          <Link
+            key={index + 1}
+            to={`/Kanbas/${item.title}`}
+            className={`list-group-item m-0 p-2 border-0`}
+            style={{ backgroundColor: bgColor, textAlign: "center" }}
+          >
+            {item.icon({
+              color: "#D41A2D",
+              fontSize: 2 + "em",
+              backgroundColor: bgColor,
+            })}
+            <p className="mb-2" style={{ fontSize:12+'px', color: textColor, fontWeight: 500 }}>
+              {item.title}
+            </p>
+          </Link>
+        );
+      })}
     </div>
   );
-};
+}
 export default KanbasNavigation;
