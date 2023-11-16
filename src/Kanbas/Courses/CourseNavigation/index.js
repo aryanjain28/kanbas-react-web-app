@@ -1,46 +1,35 @@
 import { Link, useParams, useLocation } from "react-router-dom";
-import "./index.css";
-import React from "react";
 
-const _LINKS = [
-  "Home",
-  "Modules",
-  "Piazza",
-  "Zoom Meetings",
-  "Assignments",
-  "Quizzes",
-  "Grades",
-  "Panopto Video",
-  "Discussions",
-  "Announcements",
-  "Pages",
-  "Files",
-  "Rubrics",
-  "Outcomes",
-  "Collaborations",
-  "Syllabus",
-  "Settings",
-];
+function CourseNavigation() {
+    const links = [
+        "Home",
+        "Modules",
+        "Announcements",
+        "Quizzes",
+        "Grades",
+        "ZoomMeetings",
+        "Assignments",
+        "People",
+        "Settings"
+    ];
+    const { courseId } = useParams();
+    const { pathname } = useLocation();
+    return (
+        <div className="col-xl-2 col-lg-2 d-none d-lg-block">
+            <ul className="nav flex-column fs-5">
+                {links.map((link, index) => (
+                    <li key={index} className={`nav-item ${pathname.includes(link) ? "border-start border-dark" : ""}`}>
+                        <Link
+                            to={`/Kanbas/Courses/${courseId}/${link}`}
+                            className={`nav-link ${pathname.includes(link) ? "active text-dark" : "text-danger"}`}>
+                            {link}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
 
-const CourseNavigation = () => {
-  const { courseId } = useParams();
-  const { pathname } = useLocation();
-
-  return (
-    <div className="list-group wd-course-navigation" style={{ width: 150 }}>
-      {_LINKS.map((link, index) => (
-        <Link
-          key={index}
-          to={`/Kanbas/Courses/${courseId}/${link}`}
-          className={`list-group-item ${
-            pathname.includes(link) && "active"
-          } p-0 px-1`}
-        >
-          {link}
-        </Link>
-      ))}
-    </div>
-  );
-};
 
 export default CourseNavigation;

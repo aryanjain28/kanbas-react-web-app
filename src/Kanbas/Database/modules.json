@@ -1,97 +1,56 @@
 [
-  {
-    "_id": "M101",
-    "name": "Introduction to Rocket Propulsion",
-    "description": "Basic principles of rocket propulsion and rocket engines.",
-    "course": "RS101",
-    "lessons": [
-      {
-        "name": "Introduction to Rocket Propulsion I",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.        "
-      },
-      {
-        "name": "Introduction to Rocket Propulsion II",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        "name": "Introduction to Rocket Propulsion III",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      }
-    ]
-  },
-  {
-    "_id": "M102",
-    "name": "Fuel and Combustion",
-    "description": "Understanding rocket fuel, combustion processes, and efficiency.",
-    "course": "RS101",
-    "lessons": [
-      {
-        "name": "Fuel and Combustion I",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        "name": "Fuel and Combustion II",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        "name": "Fuel and Combustion III",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      }
-    ]
-  },
-  {
-    "_id": "M103",
-    "name": "Nozzle Design",
-    "description": "Principles of rocket nozzle design and performance optimization.",
-    "course": "RS101",
-    "lessons": [
-      {
-        "name": "Nozzle Design I",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        "name": "Nozzle Design II",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        "name": "Nozzle Design III",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      }
-    ]
-  },
-  {
-    "_id": "M201",
-    "name": "Fundamentals of Aerodynamics",
-    "description": "Basic aerodynamic concepts and fluid dynamics principles.",
-    "course": "RS102"
-  },
-  {
-    "_id": "M202",
-    "name": "Subsonic and Supersonic Flow",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "course": "RS102"
-  },
-  {
-    "_id": "M203",
-    "name": "Aerodynamic Heating",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "course": "RS102"
-  },
-  {
-    "_id": "M301",
-    "name": "Spacecraft Structural Design",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "course": "RS103"
-  },
-  {
-    "name": "Orbital Mechanics",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "course": "RS103"
-  },
-  {
-    "_id": "M303",
-    "name": "Spacecraft Systems Engineering",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "course": "RS103"
-  }
-]
+    {
+      "_id": "M101",
+      "name": "Introduction to Rocket Propulsion",
+      "description": "Basic principles of rocket propulsion and rocket engines.",
+      "course": "RS101"
+    },
+    {
+      "_id": "M102",
+      "name": "Fuel and Combustion",
+      "description": "Understanding rocket fuel, combustion processes, and efficiency.",
+      "course": "RS101"
+    },
+    {
+      "_id": "M103",
+      "name": "Nozzle Design",
+      "description": "Principles of rocket nozzle design and performance optimization.",
+      "course": "RS101"
+    },
+    {
+      "_id": "M201",
+      "name": "Fundamentals of Aerodynamics",
+      "description": "Basic aerodynamic concepts and fluid dynamics principles.",
+      "course": "RS102"
+    },
+    {
+      "_id": "M202",
+      "name": "Subsonic and Supersonic Flow",
+      "description": "Understanding subsonic and supersonic aerodynamic behaviors.",
+      "course": "RS102"
+    },
+    {
+      "_id": "M203",
+      "name": "Aerodynamic Heating",
+      "description": "Study of aerodynamic heating and thermal protection systems.",
+      "course": "RS102"
+    },
+    {
+      "_id": "M301",
+      "name": "Spacecraft Structural Design",
+      "description": "Fundamentals of designing spacecraft structures and materials selection.",
+      "course": "RS103"
+    },
+    {
+      "_id": "M302",
+      "name": "Orbital Mechanics",
+      "description": "Understanding orbital dynamics and mission planning.",
+      "course": "RS103"
+    },
+    {
+      "_id": "M303",
+      "name": "Spacecraft Systems Engineering",
+      "description": "Overview of spacecraft systems and subsystems engineering.",
+      "course": "RS103"
+    }
+  ]

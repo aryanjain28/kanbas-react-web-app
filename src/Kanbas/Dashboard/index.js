@@ -1,5 +1,4 @@
-import db from "../Database";
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 
 import { Link } from "react-router-dom";
@@ -26,7 +25,7 @@ function Dashboard({
 
   return (
     <div>
-      <div className="m-4 px-3 w-100">
+      <div className="px-3 w-100">
         <h1 className="display-4">Dashboard</h1>
         <hr />
 
@@ -36,17 +35,17 @@ function Dashboard({
 
           <input
             value={course.name}
-            className="form-control my-3"
+            className="form-control my-3 w-75"
             onChange={(e) => setCourse({ ...course, name: e.target.value })}
           />
           <input
             value={course.number}
-            className="form-control my-3"
+            className="form-control my-3 w-75"
             onChange={(e) => setCourse({ ...course, number: e.target.value })}
           />
           <input
             value={course.startDate}
-            className="form-control my-3"
+            className="form-control my-3 w-75"
             type="date"
             onChange={(e) =>
               setCourse({ ...course, startDate: e.target.value })
@@ -54,7 +53,7 @@ function Dashboard({
           />
           <input
             value={course.endDate}
-            className="form-control"
+            className="form-control w-75"
             type="date"
             onChange={(e) => setCourse({ ...course, endDate: e.target.value })}
           />
@@ -83,14 +82,6 @@ function Dashboard({
                   </div>
                   <div className="card-body">
                     <h5 className={`card-title text-truncate`}>
-                      {/* <Link
-                        className={`text-${color}`}
-                        style={{ textDecoration: "none" }}
-                        to={`/Kanbas/Courses/${course._id}`}
-                      >
-                        {course.name}
-                      </Link> */}
-
                       <Link
                         key={course._id}
                         to={`/Kanbas/Courses/${course._id}`}

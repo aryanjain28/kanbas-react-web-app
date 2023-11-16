@@ -1,6 +1,9 @@
 const MainPage = () => {
   return (
     <>
+      <br />
+      <br />
+
       <h1 style={{ textAlign: "center" }}>Hello and Welcome!</h1>
 
       <br />
@@ -67,12 +70,23 @@ const MainPage = () => {
             </tr>
 
             <tr>
-              <td style={{ padding: 10 }}>3.</td>
+              <td style={{ padding: 10 }}>4.</td>
               <td style={{ padding: 10 }}>
                 <a href="./#/Kanbas/Dashboard">Assignment-4</a>
               </td>
               <td style={{ padding: 10 }}>
                 <a href="./#/Labs/a4">Lab-4</a>
+              </td>
+              <td>100 / 100</td>
+            </tr>
+
+            <tr>
+              <td style={{ padding: 10 }}>5.</td>
+              <td style={{ padding: 10 }}>
+                <a href="./#/Kanbas/Dashboard">Assignment-5</a>
+              </td>
+              <td style={{ padding: 10 }}>
+                <a href="./#/Labs/a5">Lab-5</a>
               </td>
               <td>--- / 100</td>
             </tr>

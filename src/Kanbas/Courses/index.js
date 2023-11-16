@@ -1,24 +1,41 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
+import BreadCrumb from "./BreadCrumb";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
-import Grades from "./Grades/index";
-import { Breadcrumb } from "./BreadCrumb";
+import Grades from "./Grades";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function Courses({ courses }) {
+const Courses = () => {
+  const { courseId } = useParams();
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  const URL = `${API_BASE}/api/courses`;
+  const [course, setCourse] = useState({});
+
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  };
+
+  useEffect(() => {
+    if (courseId) {
+      findCourseById(courseId);
+    }
+  }, [courseId]);
+
   return (
-    <div className="d-flex flex-column w-100">
-      <Breadcrumb />
-      <hr />
+    <div className="flex-fill">
+      <BreadCrumb />
+      <hr className="horizontal-rule" />
 
-      <div className="d-flex">
-        <CourseNavigation />
-        <div className="overflow-y-scroll m-3 w-100">
+      <div className="mt-3 row">
+        <CourseNavigation className="col-xl-2 col-lg-2 d-none d-lg-block" />
+        <div className="col-xl-10 col-lg-10">
           <Routes>
-            <Route path="/" element={<Navigate to="Home" />} />
+            {courseId && <Route path="/" element={<Navigate to="Home" />} />}
             <Route path="Home" element={<Home />} />
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
@@ -33,6 +50,5 @@ function Courses({ courses }) {
       </div>
     </div>
   );
-}
-
+};
 export default Courses;

@@ -1,16 +1,18 @@
 import React from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
-import {
-  addAssignment,
-  selectAssignment,
-  updateAssignment,
-} from "./assignmentsReducer";
 import { useSelector, useDispatch } from "react-redux";
 import {
   FaCheckCircle as TickIcon,
   FaEllipsisV as OptionsIcon,
   FaPlusCircle as PlusIcon,
 } from "react-icons/fa";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment as selectAssignment,
+} from "../assignmentsReducer";
+import * as client from "../client";
 
 const AssignmentEditor = () => {
   const assignment = useSelector(
@@ -20,6 +22,21 @@ const AssignmentEditor = () => {
 
   const { courseId } = useParams();
   const { pathname } = useLocation();
+
+  const handleAddAssignment = () => {
+    client.createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment({ ...assignment, course: courseId }));
+    });
+  };
+  const handleDeleteAssignment = (assignmentId) => {
+    client.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    });
+  };
+  const handleUpdateAssignment = async () => {
+    const status = await client.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+  };
 
   return (
     <div class="col mx-5">
@@ -249,10 +266,8 @@ const AssignmentEditor = () => {
                 className="btn btn-danger"
                 onClick={() =>
                   pathname.includes("New")
-                    ? dispatch(
-                        addAssignment({ ...assignment, course: courseId })
-                      )
-                    : dispatch(updateAssignment(assignment))
+                    ? handleAddAssignment()
+                    : handleUpdateAssignment()
                 }
               >
                 Save

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   deleteAssignment,
-  initialState,
-  selectAssignment,
+  setAssignment,
+  setAssignments,
 } from "./assignmentsReducer";
+import * as client from "./client";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import {
   FaCheckCircle as TickIcon,
   FaPenSquare as EditIcon,
@@ -50,7 +52,7 @@ const ButtonGroup = ({ cid }) => {
           class="d-flex align-items-center justify-content-center  gap-2  btn btn-danger"
           style={{ textDecoration: "none" }}
           to={`/Kanbas/Courses/${cid}/Assignments/New`}
-          onClick={() => dispatch(selectAssignment(init))}
+          onClick={() => dispatch(setAssignment(init))}
         >
           <PlusIcon />
           Assignment
@@ -76,13 +78,23 @@ const Assignments = () => {
     (assignment) => assignment.course === courseId
   );
 
-  console.log(assignments);
-
   const [showConfirmationIndex, setShowConfirmationIndex] = useState(-1);
 
+  useEffect(() => {
+    client
+      .findAssignmentsForCourse(courseId)
+      .then((assignments) => dispatch(setAssignments(assignments)));
+  }, [courseId, dispatch]);
+
   const handleConfirmDelete = (aid) => {
-    dispatch(deleteAssignment(aid));
+    handleDeleteAssignment(aid);
     setShowConfirmationIndex(-1);
+  };
+
+  const handleDeleteAssignment = (assignmentId) => {
+    client.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    });
   };
 
   return (
@@ -127,9 +139,7 @@ const Assignments = () => {
                       class="card-title h5 text-dark"
                       style={{ textDecoration: "none" }}
                       to={`/Kanbas/Courses/${courseId}/Assignments/${courseAssignment._id}`}
-                      onClick={() =>
-                        dispatch(selectAssignment(courseAssignment))
-                      }
+                      onClick={() => dispatch(setAssignment(courseAssignment))}
                     >
                       <EditIcon fontSize={20} className="text-success" />
                     </Link>
@@ -142,6 +152,7 @@ const Assignments = () => {
                           showConfirmationIndex === index ? -1 : index
                         );
                       }}
+                      style={{ cursor: "pointer" }}
                     />
                   </div>
 
@@ -152,7 +163,7 @@ const Assignments = () => {
                         style={{ textDecoration: "none" }}
                         to={`/Kanbas/Courses/${courseId}/Assignments/${courseAssignment._id}`}
                         onClick={() =>
-                          dispatch(selectAssignment(courseAssignment))
+                          dispatch(setAssignment(courseAssignment))
                         }
                       >
                         {courseAssignment.name}
