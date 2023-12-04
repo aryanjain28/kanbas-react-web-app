@@ -72,7 +72,7 @@ const MainPage = () => {
             <tr>
               <td style={{ padding: 10 }}>4.</td>
               <td style={{ padding: 10 }}>
-                <a href="./#/Kanbas/Dashboard">Assignment-4</a>
+                <a href="https://a4--graceful-froyo-3e6a82.netlify.app/kanbas/dashboard">Assignment-4</a>
               </td>
               <td style={{ padding: 10 }}>
                 <a href="./#/Labs/a4">Lab-4</a>
@@ -83,11 +83,20 @@ const MainPage = () => {
             <tr>
               <td style={{ padding: 10 }}>5.</td>
               <td style={{ padding: 10 }}>
-                <a href="./#/Kanbas/Dashboard">Assignment-5</a>
+                <a href="https://a5--graceful-froyo-3e6a82.netlify.app/#/Kanbas/Dashboard">Assignment-5</a>
               </td>
               <td style={{ padding: 10 }}>
-                <a href="./#/Labs/a5">Lab-5</a>
+                <a href="https://a5--graceful-froyo-3e6a82.netlify.app/#/Labs/a5">Lab-5</a>
               </td>
+              <td>--- / 100</td>
+            </tr>
+
+            <tr>
+              <td style={{ padding: 10 }}>6.</td>
+              <td style={{ padding: 10 }}>
+                <a href="./#/Kanbas/signin">Assignment-6</a>
+              </td>
+              <td style={{ padding: 10 }}></td>
               <td>--- / 100</td>
             </tr>
           </tbody>

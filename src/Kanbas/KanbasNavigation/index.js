@@ -32,6 +32,13 @@ function KanbasNavigation() {
     { name: "Help", icon: <FaQuestionCircle className="wd-icon" /> },
   ];
 
+  const getActivator = (pathname) =>
+    pathname.includes("signin") ||
+    pathname.includes("signup") ||
+    pathname.includes("users") ||
+    pathname.includes("account") ||
+    pathname.includes("Account");
+
   return (
     <div
       className="d-flex h-100 position-fixed flex-column text-white align-items-center kanbas-navigation"
@@ -49,14 +56,22 @@ function KanbasNavigation() {
             <Link
               to={`/Kanbas/${link.name}`}
               className={`list-group-item ${
-                pathname.includes(link.name) && "active"
+                link.name === "Account"
+                  ? getActivator(pathname) && "active"
+                  : pathname.includes(link.name) && "active"
               }`}
             >
               <div className="d-flex flex-column align-items-center">
                 {link.icon}
                 <div
                   className={
-                    pathname.includes(link.name) ? "text-danger" : "text-white"
+                    link.name === "Account"
+                      ? getActivator(pathname)
+                        ? "text-danger"
+                        : "text-white"
+                      : pathname.includes(link.name)
+                      ? "text-danger"
+                      : "text-white"
                   }
                 >
                   {link.name}
